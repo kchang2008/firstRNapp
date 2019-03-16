@@ -11,17 +11,6 @@ import { platform } from "os";
 type props = {}
 
 export default class Owner extends Component<props>{
-  static navigationOptions = {
-        headerTitle: '我的',//对页面的配置
-        tabBarLabel: '我的',
-        tabBarIcon: ({ focused, tintColor }) => (
-              <Image
-                source={focused ? require('./image/owner_s.png') : require('./image/owner_n.png')}
-                style={{ width: 26, height: 26, tintColor: tintColor }}
-              />
-            )
-  };
-
   constructor(props){
     super(props);
   }

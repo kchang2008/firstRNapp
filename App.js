@@ -21,35 +21,11 @@ import Details from './src/Component/Details';
 
 import {createStackNavigator} from 'react-navigation-stack'
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
-
-const dataSource = [
-                    {icon:require('./image/home_n.png'),selectedIcon:require('./image/home_s.png'),tabPage:'Home',tabName:'首页',component:Home},
-                    {icon:require('./image/article_n.png'),selectedIcon:require('./image/article_s.png'),tabPage:'Article',tabName:'文章',component:Article},
-                    {icon:require('./image/order_n.png'),selectedIcon:require('./image/order_s.png'),tabPage:'Order',tabName:'订单',component:Order},
-                    {icon:require('./image/owner_n.png'),selectedIcon:require('./image/owner_s.png'),tabPage:'Owner',tabName:'我的',component:Owner}
-                 ]
                  
 var navigation = null;
 type Props = {};
 
 export default class App extends Component<Props> {
-  static navigationOptions = ({ navigation }) => {
-          const { params } = navigation.state;
-
-          return {
-              title: params ? params.title : '新闻',    
-                  headerStyle: {
-                      backgroundColor: '#fff',
-                  },
-                  headerTintColor: '#000',
-                  headerTitleStyle: {
-                      flex: 1,
-                      textAlign: 'center',
-                      fontWeight: '20',
-                  },
-          }
-   };
-
   constructor(props){
     super(props);
     navigation = this.props.navigation;

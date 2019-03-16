@@ -13,17 +13,6 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 type props = {}
 
 export default class Article extends Component<props>{
-  static navigationOptions = {
-        headerTitle: '文章',//对页面的配置
-        tabBarLabel: '文章',
-        tabBarIcon: ({ focused, tintColor }) => (
-              <Image
-                source={focused ? require('./image/article_s.png') : require('./image/article_n.png')}
-                style={{ width: 26, height: 26, tintColor: tintColor }}
-              />
-            )
-  };
-
   constructor(props){
     super(props);
   }
