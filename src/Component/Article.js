@@ -13,6 +13,11 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 type props = {}
 
 export default class Article extends Component<props>{
+  //设置标题
+  static navigationOptions = {
+      headerTitle: '文章'
+  };
+
   constructor(props){
     super(props);
   }

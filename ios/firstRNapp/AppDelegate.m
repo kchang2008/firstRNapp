@@ -9,6 +9,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import "SettingsViewController.h"
 
 @implementation AppDelegate
 
@@ -27,9 +28,10 @@
   rootView.backgroundColor = [UIColor blackColor];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
+  
+  self.rootViewController = [UINavigationController new];
+  self.rootViewController.view = rootView;
+  self.window.rootViewController = self.rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
 }

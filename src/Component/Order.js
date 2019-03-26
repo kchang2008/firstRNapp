@@ -13,6 +13,11 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 type props = {}
 
 export default class Order extends Component<props>{
+ //设置标题
+  static navigationOptions = {
+      headerTitle: '订单'
+  };
+
   constructor(props){
     super(props);
   }

@@ -14,6 +14,8 @@ import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
 
+  private static SettingReactPackage settingReactPackage;
+
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
     public boolean getUseDeveloperSupport() {
@@ -22,9 +24,11 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
+      settingReactPackage = new SettingReactPackage();
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-            new RNGestureHandlerPackage()
+              new MainReactPackage(),
+              new RNGestureHandlerPackage(),
+              settingReactPackage
       );
     }
 
@@ -43,5 +47,9 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+  }
+
+  public static SettingReactPackage getSettingReactPackage(){
+      return settingReactPackage;
   }
 }

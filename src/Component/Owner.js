@@ -11,6 +11,11 @@ import { platform } from "os";
 type props = {}
 
 export default class Owner extends Component<props>{
+//设置标题
+  static navigationOptions = {
+      headerTitle: '我的'
+  };
+
   constructor(props){
     super(props);
   }
