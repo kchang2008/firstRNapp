@@ -68,7 +68,6 @@
 
 - (void)buttonClicked:(id)sender {
   [[NSNotificationCenter defaultCenter] postNotificationName:@"sendCustomEventNotification" object:nil];
-  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

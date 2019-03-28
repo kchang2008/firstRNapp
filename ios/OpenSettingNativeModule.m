@@ -10,16 +10,16 @@
 
 @implementation OpenSettingNativeModule
 
-UINavigationController *rootNav;
+SettingsViewController *nativeSettingsVC;
 
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(openNativeSettingsVC) {
   dispatch_async(dispatch_get_main_queue(), ^{
     AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-    rootNav = delegate.rootViewController;
+    UINavigationController *rootNav = delegate.rootViewController;
     
-    SettingsViewController *nativeSettingsVC = [[SettingsViewController alloc] init];
+    nativeSettingsVC = [[SettingsViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nativeSettingsVC];
     [rootNav presentViewController:nav animated:YES completion:nil];
   });
@@ -94,13 +94,13 @@ RCT_EXPORT_METHOD(passPromiseBackToRN:(NSString *)msg resolve:(RCTPromiseResolve
   UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault                                                          handler:^(UIAlertAction * action) {
       //响应事件
       NSLog(@"action = %@", action);
-      [rootNav dismissViewControllerAnimated:true completion:nil];
+      [nativeSettingsVC dismissViewControllerAnimated:true completion:nil];
   }];
   
   [alert addAction:defaultAction];
   [alert addAction:cancelAction];
   
-  [rootNav presentViewController:alert animated:YES completion:nil];
+  [nativeSettingsVC presentViewController:alert animated:YES completion:nil];
 }
 
 @end

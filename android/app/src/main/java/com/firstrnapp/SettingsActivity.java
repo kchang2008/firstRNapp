@@ -1,9 +1,10 @@
 package com.firstrnapp;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.facebook.react.ReactActivity;
 
 /**
  * com.firstrnapp
@@ -12,7 +13,7 @@ import android.widget.Button;
  * @date 2019/3/17
  * Copyright (c) 2019 ${ORGANIZATION_NAME}. All rights reserved.
  */
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends ReactActivity {
     Button button;
     OpenSettingNativeModule openSettingNativeModule;
 
