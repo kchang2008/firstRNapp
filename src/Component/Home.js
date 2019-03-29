@@ -13,6 +13,7 @@ import { platform } from "os";
 import TabNavigator from 'react-native-tab-navigator';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { scaleSize } from "./ScreenUtils";
+import PermissionUtil from './PermissionUtil';
 import CustomButton from './ButtonComponent';
 
 type props = {}
@@ -48,100 +49,125 @@ export default class Home extends Component<props>{
       this.listener && this.listener.remove();
   }
 
+  alertPermissionResult(msg){
+     nativeModule.getStringFromReactNative(msg)
+  }
+
   render(){
-    return (
-         <View style={styles.container}>
-            <Text style={styles.text}>首页</Text>
-            <CustomButton
-                text="去详情页"
-                buttonColor="red"
-                buttonType="normal"
-                textStyle={styles.textStyle}
-                style={styles.customButton}
-                disableColor="grey"
-                onPress={()=> {
-                    setTimeout(()=> {
-
-                        this.props.navigation.navigate('DetailsVC');
-
-                    }, 3000);
-                }}
-            />
-            <CustomButton
-                text="去设置页"
-                buttonColor="red"
-                buttonType="normal"
-                textStyle={styles.textStyle}
-                style={styles.customButton}
-                disableColor="grey"
-                onPress={()=> {
-                    setTimeout(()=> {
-
-                        jumpToSettingsInterface();
-
-                    }, 3000);
-                }}
-            />
-            <CustomButton
-                text="测试resolve"
-                buttonColor="red"
-                buttonType="normal"
-                textStyle={styles.textStyle}
-                style={styles.customButton}
-                disableColor="grey"
-                onPress={()=> {
-                    setTimeout(()=> {
-
-                        passPromiseResolveBackToRN();
-
-                    }, 3000);
-                }}
-            />
-            <CustomButton
-                text="测试reject"
-                buttonColor="red"
-                buttonType="normal"
-                textStyle={styles.textStyle}
-                style={styles.customButton}
-                disableColor="grey"
-                onPress={()=> {
-                    setTimeout(()=> {
-
-                        passPromiseRejectBackToRN();
-
-                    }, 3000);
-                }}
-            />
-
-         </View>
-    );
-  }
-
-  //跳转到原生设置界面
-  jumpToSettingsInterface(){
-     nativeModule.openNativeSettingsVC();
-  }
-
-  //如果客户端走的是reject，则会进入到catch捕捉
-  passPromiseResolveBackToRN(){
-     nativeModule.passPromiseBackToRN("promise").then(result=> {
-                        console.warn('data', result);
-                    }).catch((err)=> {
-                        console.warn('err', err);
-                    });
-
-  }
-
-  //使用try catch捕捉异常,测试下来没有第一种显示的异常信息多
-  async passPromiseRejectBackToRN() {
-      try {
-        var result = nativeModule.passPromiseBackToRN("");
-        if (result) {
-           console.log("respond this method",result);
+        success = () => {
+              alertPermissionResult("检查权限成功")
         }
-      } catch (e) {
-        console.warn('err', e);
-      }
+
+        fail = () => {
+              alertPermissionResult("检查权限失败")
+        }
+
+        //跳转到原生设置界面
+        jumpToSettingsInterface = () => {
+             nativeModule.openNativeSettingsVC();
+        }
+
+        //如果客户端走的是reject，则会进入到catch捕捉
+        passPromiseResolveBackToRN = () => {
+             nativeModule.passPromiseBackToRN("promise").then(result=> {
+                                console.warn('data', result);
+                            }).catch((err)=> {
+                                console.warn('err', err);
+                            });
+
+        }
+
+        //使用try catch捕捉异常,测试下来没有第一种显示的异常信息多
+         passPromiseRejectBackToRN = async () =>  {
+              try {
+                var result = nativeModule.passPromiseBackToRN("");
+                if (result) {
+                   console.log("respond this method",result);
+                }
+              } catch (e) {
+                console.warn('err', e);
+              }
+        }
+
+        return (
+             <View style={styles.container}>
+                <Text style={styles.text}>首页</Text>
+                <CustomButton
+                    text="去详情页"
+                    buttonColor="red"
+                    buttonType="normal"
+                    textStyle={styles.textStyle}
+                    style={styles.customButton}
+                    disableColor="grey"
+                    onPress={()=> {
+                        setTimeout(()=> {
+                            this.props.navigation.navigate('DetailsVC');
+
+                        }, 300);
+                    }}
+                />
+                <CustomButton
+                    text="去设置页"
+                    buttonColor="red"
+                    buttonType="normal"
+                    textStyle={styles.textStyle}
+                    style={styles.customButton}
+                    disableColor="grey"
+                    onPress={()=> {
+                        setTimeout(()=> {
+
+                            jumpToSettingsInterface();
+
+                        }, 300);
+                    }}
+                />
+                <CustomButton
+                    text="测试resolve"
+                    buttonColor="red"
+                    buttonType="normal"
+                    textStyle={styles.textStyle}
+                    style={styles.customButton}
+                    disableColor="grey"
+                    onPress={()=> {
+                        setTimeout(()=> {
+
+                            passPromiseResolveBackToRN();
+
+                        }, 300);
+                    }}
+                />
+                <CustomButton
+                    text="测试reject"
+                    buttonColor="red"
+                    buttonType="normal"
+                    textStyle={styles.textStyle}
+                    style={styles.customButton}
+                    disableColor="grey"
+                    onPress={()=> {
+                        setTimeout(()=> {
+
+                            passPromiseRejectBackToRN();
+
+                        }, 300);
+                    }}
+                />
+                <CustomButton
+                    text="检查权限"
+                    buttonColor="red"
+                    buttonType="normal"
+                    textStyle={styles.textStyle}
+                    style={styles.customButton}
+                    disableColor="grey"
+                    onPress={()=> {
+                        setTimeout(()=> {
+
+                            PermissionUtil.checkPermission(success,fail,["location"]);//成功调用 失败调用 权限
+
+                        }, 3000);
+                    }}
+                />
+             </View>
+        );
   }
 }
 
