@@ -23,7 +23,7 @@ RCT_EXPORT_METHOD(openNativeSettingsVC) {
       SettingsViewController *nativeSettingsVC = [[SettingsViewController alloc] init];
       UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nativeSettingsVC];
       [rootNav presentViewController:nav animated:YES completion:nil];
-      [[ControllerManager sharedControllerManager] addViewController:nativeSettingsVC];
+      [[ViewControllerManager sharedControllerManager] addViewController:nativeSettingsVC];
   });
 }
 
@@ -50,12 +50,14 @@ RCT_EXPORT_METHOD(passPromiseBackToRN:(NSString *)msg resolve:(RCTPromiseResolve
   }
 }
 
+//使用alloc分配内存
 + (id)allocWithZone:(struct _NSZone *)zone {
   static  OpenSettingNativeModule *sharedInstance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     sharedInstance = [super allocWithZone:zone];
   });
+  NSLog(@"%s:OpenSettingNativeModule = %p",__func__,sharedInstance);
   return sharedInstance;
 }
 
@@ -97,11 +99,11 @@ RCT_EXPORT_METHOD(passPromiseBackToRN:(NSString *)msg resolve:(RCTPromiseResolve
   UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault                                                          handler:^(UIAlertAction * action) {
       //响应事件
       NSLog(@"action = %@", action);
-      NSUInteger count = [[ControllerManager alloc] getViewControllerCount];
+      NSUInteger count = [[ViewControllerManager alloc] getViewControllerCount];
       //为1说明是在主界面，不需要执行操作
       if (count > 1) {
-        UIViewController* currVC = [[ControllerManager alloc] getCurrentViewController];
-        [[ControllerManager alloc] removeViewController:currVC];
+        UIViewController* currVC = [[ViewControllerManager alloc] getCurrentViewController];
+        [[ViewControllerManager alloc] removeViewController:currVC];
         [currVC dismissViewControllerAnimated:true completion:nil];
       }
   }];
@@ -109,7 +111,7 @@ RCT_EXPORT_METHOD(passPromiseBackToRN:(NSString *)msg resolve:(RCTPromiseResolve
   [alert addAction:defaultAction];
   [alert addAction:cancelAction];
   
-  UIViewController* currVC = [[ControllerManager alloc] getCurrentViewController];
+  UIViewController* currVC = [[ViewControllerManager alloc] getCurrentViewController];
   [currVC presentViewController:alert animated:YES completion:nil];
   
 }

@@ -75,7 +75,7 @@
   if ([sender tag] == 1001) {
      [[NSNotificationCenter defaultCenter] postNotificationName:@"sendCustomEventNotification" object:nil];
   } else {
-     [[ControllerManager alloc] removeViewController:self];
+     [[ViewControllerManager alloc] removeViewController:self];
      [self dismissViewControllerAnimated:true completion:nil];
   }
 }

@@ -40,7 +40,7 @@
 		55EA67BDB7D1462FBD172F02 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5735A4A9F9C84BFFA66A5572 /* libRNGestureHandler.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		BF510A28226172E100D28CBE /* ControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF510A27226172E100D28CBE /* ControllerManager.m */; };
+		BF510A28226172E100D28CBE /* ViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF510A27226172E100D28CBE /* ViewControllerManager.m */; };
 		BFB33EBB223BD5200050E259 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFB33EBA223BD5200050E259 /* bundle */; };
 		BFCE875E223DD00A007AC399 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCE875D223DD00A007AC399 /* SettingsViewController.m */; };
 		BFCE878B223DDBCB007AC399 /* OpenSettingNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCE878A223DDBCB007AC399 /* OpenSettingNativeModule.m */; };
@@ -375,8 +375,8 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		9734EBDD37614472893F0924 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
-		BF510A26226172E100D28CBE /* ControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerManager.h; sourceTree = "<group>"; };
-		BF510A27226172E100D28CBE /* ControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControllerManager.m; sourceTree = "<group>"; };
+		BF510A26226172E100D28CBE /* ViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerManager.h; sourceTree = "<group>"; };
+		BF510A27226172E100D28CBE /* ViewControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerManager.m; sourceTree = "<group>"; };
 		BFB33EBA223BD5200050E259 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bundle; sourceTree = "<group>"; };
 		BFCE875C223DD00A007AC399 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		BFCE875D223DD00A007AC399 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -541,8 +541,8 @@
 				BFCE875D223DD00A007AC399 /* SettingsViewController.m */,
 				BFCE8789223DDBCB007AC399 /* OpenSettingNativeModule.h */,
 				BFCE878A223DDBCB007AC399 /* OpenSettingNativeModule.m */,
-				BF510A26226172E100D28CBE /* ControllerManager.h */,
-				BF510A27226172E100D28CBE /* ControllerManager.m */,
+				BF510A26226172E100D28CBE /* ViewControllerManager.h */,
+				BF510A27226172E100D28CBE /* ViewControllerManager.m */,
 			);
 			name = firstRNapp;
 			sourceTree = "<group>";
@@ -1231,7 +1231,7 @@
 			files = (
 				BFCE875E223DD00A007AC399 /* SettingsViewController.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				BF510A28226172E100D28CBE /* ControllerManager.m in Sources */,
+				BF510A28226172E100D28CBE /* ViewControllerManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				BFCE878B223DDBCB007AC399 /* OpenSettingNativeModule.m in Sources */,
 			);

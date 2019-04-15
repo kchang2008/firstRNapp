@@ -34,7 +34,7 @@
   self.window.rootViewController = self.rootViewController;
   [self.window makeKeyAndVisible];
   
-  [[ControllerManager sharedControllerManager] addViewController:self.rootViewController];
+  [[ViewControllerManager sharedControllerManager] addViewController:self.rootViewController];
   return YES;
 }
 

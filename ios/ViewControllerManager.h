@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface ControllerManager : NSObject
+@interface ViewControllerManager : NSObject
+{
+  //本类中使用到的成员变量
+  UIViewController* currVC;
+  NSMutableArray* vcArray;
+}
 
 //使用类名直接访问 [类名 方法名]
 +(instancetype)sharedControllerManager;

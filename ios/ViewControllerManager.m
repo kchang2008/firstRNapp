@@ -6,13 +6,13 @@
 //  Copyright © 2019年 Facebook. All rights reserved.
 //
 
-#import "ControllerManager.h"
+#import "ViewControllerManager.h"
 
-@implementation ControllerManager
-static ControllerManager *_instance =nil;
-//通过属性传值，知道是从那里跳转进入本界面
-UIViewController* currVC;
-NSMutableArray* vcArray;
+//定义全局变量，但只能在这个类中使用。不同于C/java,不能在其他类中使用本类类名+static变量访问
+//正规写法是放在@implementation前面
+static ViewControllerManager *_instance =nil;
+
+@implementation ViewControllerManager
 
 #pragma mark ====重写 相当于构建函数设置为私有，类的实例只能初始化一次
 //使用alloc/new方式创建
@@ -29,12 +29,24 @@ NSMutableArray* vcArray;
   return nil;
 }
 
+//复制方式初始化
+- (id)copyWithZone:(nullable NSZone*)zone {
+  NSLog(@"%s:ControllerManager copyWithZone= %p",__func__,_instance);
+  return self;
+}
+
+//深度复制
+- (id)mutableCopyWithZone:(nullable NSZone*)zone {
+  NSLog(@"%s:ControllerManager mutableCopyWithZone= %p",__func__,_instance);
+  return self;
+}
+
 //实例化句柄
 + (instancetype)sharedControllerManager
 {
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    _instance = [[ControllerManager alloc] init];
+    _instance = [[ViewControllerManager alloc] init];
   });
   NSLog(@"%s:ControllerManager = %p",__func__,_instance);
   return _instance;
@@ -43,7 +55,7 @@ NSMutableArray* vcArray;
 //添加当前UIViewController
 - (void)addViewController:(UIViewController*)controller{
   if (vcArray == nil) {
-    vcArray = [[NSMutableArray alloc]initWithCapacity:100];
+    vcArray = [[NSMutableArray alloc]init];
   }
   [vcArray addObject:controller];
   currVC = controller;

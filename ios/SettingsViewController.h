@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "ControllerManager.h"
+#import "ViewControllerManager.h"
 
 //必须指定它的基类
 @interface SettingsViewController : UIViewController
