@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text, Button,Platform,
   View, Image,TouchableOpacity,
-  NativeModules,
+  NativeModules,Alert,
   DeviceEventEmitter,
   NativeEventEmitter,
 } from 'react-native';
@@ -49,17 +49,13 @@ export default class Home extends Component<props>{
       this.listener && this.listener.remove();
   }
 
-  alertPermissionResult(msg){
-     nativeModule.getStringFromReactNative(msg)
-  }
-
   render(){
         success = () => {
-              alertPermissionResult("检查权限成功")
+              nativeModule.getStringFromReactNative("检查权限成功")
         }
 
         fail = () => {
-              alertPermissionResult("检查权限失败")
+              nativeModule.getStringFromReactNative("检查权限失败")
         }
 
         //跳转到原生设置界面
@@ -89,6 +85,8 @@ export default class Home extends Component<props>{
               }
         }
 
+        let delay_time = 300;
+
         return (
              <View style={styles.container}>
                 <Text style={styles.text}>首页</Text>
@@ -99,11 +97,12 @@ export default class Home extends Component<props>{
                     textStyle={styles.textStyle}
                     style={styles.customButton}
                     disableColor="grey"
-                    onPress={()=> {
+                    onPress={(callback)=> {
                         setTimeout(()=> {
+                            callback();
                             this.props.navigation.navigate('DetailsVC');
 
-                        }, 300);
+                        }, delay_time);
                     }}
                 />
                 <CustomButton
@@ -113,12 +112,12 @@ export default class Home extends Component<props>{
                     textStyle={styles.textStyle}
                     style={styles.customButton}
                     disableColor="grey"
-                    onPress={()=> {
+                    onPress={(callback)=> {
                         setTimeout(()=> {
-
+                            callback();
                             jumpToSettingsInterface();
 
-                        }, 300);
+                        }, delay_time);
                     }}
                 />
                 <CustomButton
@@ -128,12 +127,12 @@ export default class Home extends Component<props>{
                     textStyle={styles.textStyle}
                     style={styles.customButton}
                     disableColor="grey"
-                    onPress={()=> {
+                    onPress={(callback)=> {
                         setTimeout(()=> {
-
+                            callback();
                             passPromiseResolveBackToRN();
 
-                        }, 300);
+                        }, delay_time);
                     }}
                 />
                 <CustomButton
@@ -143,12 +142,12 @@ export default class Home extends Component<props>{
                     textStyle={styles.textStyle}
                     style={styles.customButton}
                     disableColor="grey"
-                    onPress={()=> {
+                    onPress={(callback)=> {
                         setTimeout(()=> {
-
+                            callback();
                             passPromiseRejectBackToRN();
 
-                        }, 300);
+                        }, delay_time);
                     }}
                 />
                 <CustomButton
@@ -158,12 +157,12 @@ export default class Home extends Component<props>{
                     textStyle={styles.textStyle}
                     style={styles.customButton}
                     disableColor="grey"
-                    onPress={()=> {
+                    onPress={(callback)=> {
                         setTimeout(()=> {
-
+                            callback();
                             PermissionUtil.checkPermission(success,fail,["location"]);//成功调用 失败调用 权限
 
-                        }, 3000);
+                        }, delay_time);
                     }}
                 />
              </View>
@@ -190,6 +189,6 @@ const styles = StyleSheet.create({
     },
     textStyle: {
          color: 'blue',
-         fontSize:20
+         fontSize:scaleSize(40)
     },
 });

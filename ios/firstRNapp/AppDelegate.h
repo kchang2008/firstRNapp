@@ -6,6 +6,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "ControllerManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -10,7 +10,9 @@
 #import "AppDelegate.h"
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
+#import "ControllerManager.h"
 
+//如果需要支持发送消息给服务器，就要继承RCTEventEmitter这个类，RCTBridgeModule是接口
 @interface OpenSettingNativeModule : RCTEventEmitter<RCTBridgeModule>
 
 @end

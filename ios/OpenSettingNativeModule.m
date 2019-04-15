@@ -10,18 +10,20 @@
 
 @implementation OpenSettingNativeModule
 
-SettingsViewController *nativeSettingsVC;
-
+//导入当前这个交互类
 RCT_EXPORT_MODULE();
 
+//申明RN可以调用的本地方法
 RCT_EXPORT_METHOD(openNativeSettingsVC) {
   dispatch_async(dispatch_get_main_queue(), ^{
-    AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-    UINavigationController *rootNav = delegate.rootViewController;
+      AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
+      UINavigationController *rootNav = delegate.rootViewController;
     
-    nativeSettingsVC = [[SettingsViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nativeSettingsVC];
-    [rootNav presentViewController:nav animated:YES completion:nil];
+      //初始化并跳转到指定界面
+      SettingsViewController *nativeSettingsVC = [[SettingsViewController alloc] init];
+      UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nativeSettingsVC];
+      [rootNav presentViewController:nav animated:YES completion:nil];
+      [[ControllerManager sharedControllerManager] addViewController:nativeSettingsVC];
   });
 }
 
@@ -60,6 +62,7 @@ RCT_EXPORT_METHOD(passPromiseBackToRN:(NSString *)msg resolve:(RCTPromiseResolve
 - (instancetype)init {
   self = [super init];
   if (self) {
+    //采用通知的方式发送消息给RN
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter removeObserver:self];
     [defaultCenter addObserver:self
@@ -94,13 +97,20 @@ RCT_EXPORT_METHOD(passPromiseBackToRN:(NSString *)msg resolve:(RCTPromiseResolve
   UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault                                                          handler:^(UIAlertAction * action) {
       //响应事件
       NSLog(@"action = %@", action);
-      [nativeSettingsVC dismissViewControllerAnimated:true completion:nil];
+      NSUInteger count = [[ControllerManager alloc] getViewControllerCount];
+      //为1说明是在主界面，不需要执行操作
+      if (count > 1) {
+        UIViewController* currVC = [[ControllerManager alloc] getCurrentViewController];
+        [[ControllerManager alloc] removeViewController:currVC];
+        [currVC dismissViewControllerAnimated:true completion:nil];
+      }
   }];
   
   [alert addAction:defaultAction];
   [alert addAction:cancelAction];
   
-  [nativeSettingsVC presentViewController:alert animated:YES completion:nil];
+  UIViewController* currVC = [[ControllerManager alloc] getCurrentViewController];
+  [currVC presentViewController:alert animated:YES completion:nil];
+  
 }
-
 @end

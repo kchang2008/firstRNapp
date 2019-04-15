@@ -14,6 +14,7 @@ import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
 
+  private static MainApplication instance;
   private static SettingReactPackage settingReactPackage;
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -22,6 +23,10 @@ public class MainApplication extends Application implements ReactApplication {
       return BuildConfig.DEBUG;
     }
 
+    /**
+     * 所有的和RN交互的包都需要定义在这里
+     * @return
+     */
     @Override
     protected List<ReactPackage> getPackages() {
       settingReactPackage = new SettingReactPackage();
@@ -47,9 +52,18 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    instance = this;
   }
 
   public static SettingReactPackage getSettingReactPackage(){
       return settingReactPackage;
+  }
+
+  /**
+   * 获取当前应用句柄
+   * @return
+   */
+  public static MainApplication getInstnace(){
+      return instance;
   }
 }

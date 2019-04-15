@@ -1,4 +1,8 @@
 import Permissions from 'react-native-permissions';
+import {
+  Alert,
+} from 'react-native';
+
 class PermissionUtil{
     checkPermission = (success,fail,permission = []) => {
         let self = this;
@@ -42,12 +46,12 @@ class PermissionUtil{
         console.log('per[i]',per[i]);
         Permissions.request(per[i])
             .then(res => {
-                console.log('res',res);
                 if (res != 'authorized') {
                     if(fail){
                         fail();
                         return;
                     }
+                    console.log('当前权限检查项',per[i]);
                     switch (per[i]){
                         case "camera":
                             Alert.alert(

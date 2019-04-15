@@ -14,6 +14,10 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  //设置返回按钮
+  self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(buttonClicked:)];
+  self.navigationItem.leftBarButtonItem.tag = 1004;
+  
   self.navigationItem.title = @"设置界面";
   
   self.view.backgroundColor = [UIColor purpleColor];
@@ -22,7 +26,7 @@
   
   //获取屏幕宽度：[[UIScreen mainScreen] bounds].size.width
   //获取屏幕高度： [[UIScreen mainScreen] bounds].size.height
-  label.frame = CGRectMake(10, 30, 240, 140);
+  label.frame = CGRectMake(10, 80, 240, 140);
   label.backgroundColor = [ UIColor orangeColor];
   label.text = @"上海钱拓金融欢迎您";
   label.font = [ UIFont systemFontOfSize: 14.0 ];
@@ -58,16 +62,22 @@
   [self.view addSubview:label];
   
   UIButton *event_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-  event_button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+  event_button.frame = CGRectMake(10.0, 250.0, 160.0, 40.0);
   event_button.backgroundColor =[UIColor orangeColor];
   [event_button setTitle:@"发送消息给RN" forState:UIControlStateNormal];
   [event_button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
   event_button.tag = 1001;
   [self.view addSubview:event_button];
+  
 }
 
 - (void)buttonClicked:(id)sender {
-  [[NSNotificationCenter defaultCenter] postNotificationName:@"sendCustomEventNotification" object:nil];
+  if ([sender tag] == 1001) {
+     [[NSNotificationCenter defaultCenter] postNotificationName:@"sendCustomEventNotification" object:nil];
+  } else {
+     [[ControllerManager alloc] removeViewController:self];
+     [self dismissViewControllerAnimated:true completion:nil];
+  }
 }
 
 @end

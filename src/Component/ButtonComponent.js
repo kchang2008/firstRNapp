@@ -35,7 +35,7 @@ export default class CustomButton extends Component {
 
     _onPress() {
         if (this.props.onPress) {
-//            this._disable();
+            this._disable();
             this.props.onPress(this._enable);
         }
     }

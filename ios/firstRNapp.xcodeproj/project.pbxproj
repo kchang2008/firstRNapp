@@ -40,9 +40,11 @@
 		55EA67BDB7D1462FBD172F02 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5735A4A9F9C84BFFA66A5572 /* libRNGestureHandler.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		BF510A28226172E100D28CBE /* ControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF510A27226172E100D28CBE /* ControllerManager.m */; };
 		BFB33EBB223BD5200050E259 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFB33EBA223BD5200050E259 /* bundle */; };
 		BFCE875E223DD00A007AC399 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCE875D223DD00A007AC399 /* SettingsViewController.m */; };
 		BFCE878B223DDBCB007AC399 /* OpenSettingNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCE878A223DDBCB007AC399 /* OpenSettingNativeModule.m */; };
+		BFE5C728224F3E640088E9D6 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5C725224F3DC50088E9D6 /* libReactNativePermissions.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
@@ -335,6 +337,13 @@
 			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
 			remoteInfo = "RNGestureHandler-tvOS";
 		};
+		BFE5C724224F3DC50088E9D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFE5C6FB224F3DC50088E9D6 /* ReactNativePermissions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D23B34F1C767B80008B4819;
+			remoteInfo = ReactNativePermissions;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -366,11 +375,14 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		9734EBDD37614472893F0924 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		BF510A26226172E100D28CBE /* ControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerManager.h; sourceTree = "<group>"; };
+		BF510A27226172E100D28CBE /* ControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControllerManager.m; sourceTree = "<group>"; };
 		BFB33EBA223BD5200050E259 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bundle; sourceTree = "<group>"; };
 		BFCE875C223DD00A007AC399 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		BFCE875D223DD00A007AC399 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		BFCE8789223DDBCB007AC399 /* OpenSettingNativeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSettingNativeModule.h; sourceTree = "<group>"; };
 		BFCE878A223DDBCB007AC399 /* OpenSettingNativeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenSettingNativeModule.m; sourceTree = "<group>"; };
+		BFE5C6FB224F3DC50088E9D6 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		D394BB4018804BCD8568B747 /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -389,6 +401,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE5C728224F3E640088E9D6 /* libReactNativePermissions.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -528,6 +541,8 @@
 				BFCE875D223DD00A007AC399 /* SettingsViewController.m */,
 				BFCE8789223DDBCB007AC399 /* OpenSettingNativeModule.h */,
 				BFCE878A223DDBCB007AC399 /* OpenSettingNativeModule.m */,
+				BF510A26226172E100D28CBE /* ControllerManager.h */,
+				BF510A27226172E100D28CBE /* ControllerManager.m */,
 			);
 			name = firstRNapp;
 			sourceTree = "<group>";
@@ -586,6 +601,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BFE5C6FB224F3DC50088E9D6 /* ReactNativePermissions.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -661,6 +677,14 @@
 			children = (
 				BFB33EB5223BD3530050E259 /* libRNGestureHandler.a */,
 				BFB33EB7223BD3530050E259 /* libRNGestureHandler-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFE5C6FC224F3DC50088E9D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFE5C725224F3DC50088E9D6 /* libReactNativePermissions.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -823,6 +847,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = BFE5C6FC224F3DC50088E9D6 /* Products */;
+					ProjectRef = BFE5C6FB224F3DC50088E9D6 /* ReactNativePermissions.xcodeproj */;
 				},
 				{
 					ProductGroup = BFB33EB0223BD3520050E259 /* Products */;
@@ -1113,6 +1141,13 @@
 			remoteRef = BFB33EB6223BD3530050E259 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		BFE5C725224F3DC50088E9D6 /* libReactNativePermissions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativePermissions.a;
+			remoteRef = BFE5C724224F3DC50088E9D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1196,6 +1231,7 @@
 			files = (
 				BFCE875E223DD00A007AC399 /* SettingsViewController.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				BF510A28226172E100D28CBE /* ControllerManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				BFCE878B223DDBCB007AC399 /* OpenSettingNativeModule.m in Sources */,
 			);
