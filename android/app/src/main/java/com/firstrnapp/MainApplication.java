@@ -3,11 +3,13 @@ package com.firstrnapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.firstrnapp.module.NetworkReactPackage;
+import com.firstrnapp.module.SettingReactPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +35,7 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
               new MainReactPackage(),
               new RNGestureHandlerPackage(),
+              new NetworkReactPackage(),
               settingReactPackage
       );
     }
@@ -57,13 +60,5 @@ public class MainApplication extends Application implements ReactApplication {
 
   public static SettingReactPackage getSettingReactPackage(){
       return settingReactPackage;
-  }
-
-  /**
-   * 获取当前应用句柄
-   * @return
-   */
-  public static MainApplication getInstnace(){
-      return instance;
   }
 }

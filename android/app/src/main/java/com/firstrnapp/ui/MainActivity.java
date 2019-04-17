@@ -1,4 +1,4 @@
-package com.firstrnapp;
+package com.firstrnapp.ui;
 
 import com.facebook.react.ReactActivity;
 

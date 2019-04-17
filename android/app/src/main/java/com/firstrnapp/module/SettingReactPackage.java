@@ -1,4 +1,4 @@
-package com.firstrnapp;
+package com.firstrnapp.module;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -10,20 +10,20 @@ import java.util.List;
 
 /**
  * com.firstrnapp
- *
+ * 设置管理包，注册在application中
  * @author jun
  * @date 2019/3/17
  * Copyright (c) 2019 ${ORGANIZATION_NAME}. All rights reserved.
  */
 public class SettingReactPackage implements ReactPackage {
-    private OpenSettingNativeModule openSettingNativeModule;
+    private SettingNativeModule settingNativeModule;
 
     @Override
     public List<NativeModule> createNativeModules(
             ReactApplicationContext reactContext) {
-        openSettingNativeModule = new OpenSettingNativeModule(reactContext);
+        settingNativeModule = new SettingNativeModule(reactContext);
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(openSettingNativeModule);
+        modules.add(settingNativeModule);
         return modules;
     }
 
@@ -36,7 +36,7 @@ public class SettingReactPackage implements ReactPackage {
      * 获取句柄
      * @return
      */
-    public OpenSettingNativeModule getOpenSettingNativeModule() {
-        return openSettingNativeModule;
+    public SettingNativeModule getSettingNativeModule() {
+        return settingNativeModule;
     }
 }

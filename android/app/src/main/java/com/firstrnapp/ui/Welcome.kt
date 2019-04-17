@@ -1,4 +1,4 @@
-package com.firstrnapp
+package com.firstrnapp.ui;
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import com.facebook.react.ReactActivity
+import com.firstrnapp.R
+import com.firstrnapp.ui.MainActivity
 
 /**
  * 欢迎界面
@@ -18,7 +20,7 @@ class Welcome : ReactActivity() {
     var handler : Handler = Handler { msg: Message ->
         if (msg.what == 0x0001) {
             //执行跳转操作
-            val intent = Intent(this@Welcome,MainActivity::class.java)
+            val intent = Intent(this@Welcome, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

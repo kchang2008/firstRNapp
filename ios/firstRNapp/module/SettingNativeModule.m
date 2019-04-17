@@ -1,14 +1,14 @@
 //
-//  OpenSettingNativeModule.m
+//  SettingNativeModule.m
 //  firstRNapp
 //
 //  Created by jun on 2019/3/17.
 //  Copyright © 2019年 Facebook. All rights reserved.
 //
 
-#import "OpenSettingNativeModule.h"
+#import "SettingNativeModule.h"
 
-@implementation OpenSettingNativeModule
+@implementation SettingNativeModule
 
 //导入当前这个交互类
 RCT_EXPORT_MODULE();
@@ -52,12 +52,12 @@ RCT_EXPORT_METHOD(passPromiseBackToRN:(NSString *)msg resolve:(RCTPromiseResolve
 
 //使用alloc分配内存
 + (id)allocWithZone:(struct _NSZone *)zone {
-  static  OpenSettingNativeModule *sharedInstance = nil;
+  static SettingNativeModule *sharedInstance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     sharedInstance = [super allocWithZone:zone];
   });
-  NSLog(@"%s:OpenSettingNativeModule = %p",__func__,sharedInstance);
+  NSLog(@"%s:SettingNativeModule = %p",__func__,sharedInstance);
   return sharedInstance;
 }
 

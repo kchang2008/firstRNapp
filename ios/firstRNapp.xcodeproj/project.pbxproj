@@ -40,10 +40,15 @@
 		55EA67BDB7D1462FBD172F02 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5735A4A9F9C84BFFA66A5572 /* libRNGestureHandler.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		BF510A28226172E100D28CBE /* ViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF510A27226172E100D28CBE /* ViewControllerManager.m */; };
-		BFB33EBB223BD5200050E259 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFB33EBA223BD5200050E259 /* bundle */; };
-		BFCE875E223DD00A007AC399 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCE875D223DD00A007AC399 /* SettingsViewController.m */; };
-		BFCE878B223DDBCB007AC399 /* OpenSettingNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCE878A223DDBCB007AC399 /* OpenSettingNativeModule.m */; };
+		BF0003D82266F558004C2D2A /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF0003D72266F558004C2D2A /* bundle */; };
+		BF0003E52267006D004C2D2A /* module in Resources */ = {isa = PBXBuildFile; fileRef = BF0003E22267006D004C2D2A /* module */; };
+		BF0003E62267006D004C2D2A /* ui in Resources */ = {isa = PBXBuildFile; fileRef = BF0003E32267006D004C2D2A /* ui */; };
+		BF0003E72267006D004C2D2A /* bean in Resources */ = {isa = PBXBuildFile; fileRef = BF0003E42267006D004C2D2A /* bean */; };
+		BF0003EA22670186004C2D2A /* ViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0003E922670186004C2D2A /* ViewControllerManager.m */; };
+		BF0003EC2267019D004C2D2A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0003EB2267019D004C2D2A /* SettingsViewController.m */; };
+		BF0003F022670259004C2D2A /* SettingNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0003EF22670259004C2D2A /* SettingNativeModule.m */; };
+		BF0003F322670304004C2D2A /* NetworkNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0003F222670304004C2D2A /* NetworkNativeModule.m */; };
+		BFB46C722267038900822A0E /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = BFB46C492267038900822A0E /* AFNetworking */; };
 		BFE5C728224F3E640088E9D6 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5C725224F3DC50088E9D6 /* libReactNativePermissions.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
@@ -375,13 +380,16 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		9734EBDD37614472893F0924 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
-		BF510A26226172E100D28CBE /* ViewControllerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerManager.h; sourceTree = "<group>"; };
-		BF510A27226172E100D28CBE /* ViewControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerManager.m; sourceTree = "<group>"; };
-		BFB33EBA223BD5200050E259 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bundle; sourceTree = "<group>"; };
-		BFCE875C223DD00A007AC399 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		BFCE875D223DD00A007AC399 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		BFCE8789223DDBCB007AC399 /* OpenSettingNativeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSettingNativeModule.h; sourceTree = "<group>"; };
-		BFCE878A223DDBCB007AC399 /* OpenSettingNativeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenSettingNativeModule.m; sourceTree = "<group>"; };
+		BF0003D72266F558004C2D2A /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bundle; sourceTree = "<group>"; };
+		BF0003E22267006D004C2D2A /* module */ = {isa = PBXFileReference; lastKnownFileType = folder; name = module; path = firstRNapp/module; sourceTree = "<group>"; };
+		BF0003E32267006D004C2D2A /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ui; path = firstRNapp/ui; sourceTree = "<group>"; };
+		BF0003E42267006D004C2D2A /* bean */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bean; path = firstRNapp/bean; sourceTree = "<group>"; };
+		BF0003E922670186004C2D2A /* ViewControllerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewControllerManager.m; path = firstRNapp/bean/ViewControllerManager.m; sourceTree = "<group>"; };
+		BF0003EB2267019D004C2D2A /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = firstRNapp/ui/SettingsViewController.m; sourceTree = "<group>"; };
+		BF0003EF22670259004C2D2A /* SettingNativeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SettingNativeModule.m; path = firstRNapp/module/SettingNativeModule.m; sourceTree = "<group>"; };
+		BF0003F122670304004C2D2A /* NetworkNativeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkNativeModule.h; path = firstRNapp/module/NetworkNativeModule.h; sourceTree = "<group>"; };
+		BF0003F222670304004C2D2A /* NetworkNativeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NetworkNativeModule.m; path = firstRNapp/module/NetworkNativeModule.m; sourceTree = "<group>"; };
+		BFB46C492267038900822A0E /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		BFE5C6FB224F3DC50088E9D6 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		D394BB4018804BCD8568B747 /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -529,7 +537,10 @@
 		13B07FAE1A68108700A75B9A /* firstRNapp */ = {
 			isa = PBXGroup;
 			children = (
-				BFB33EBA223BD5200050E259 /* bundle */,
+				BF0003E42267006D004C2D2A /* bean */,
+				BF0003E22267006D004C2D2A /* module */,
+				BF0003E32267006D004C2D2A /* ui */,
+				BF0003D72266F558004C2D2A /* bundle */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -537,12 +548,6 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				BFCE875C223DD00A007AC399 /* SettingsViewController.h */,
-				BFCE875D223DD00A007AC399 /* SettingsViewController.m */,
-				BFCE8789223DDBCB007AC399 /* OpenSettingNativeModule.h */,
-				BFCE878A223DDBCB007AC399 /* OpenSettingNativeModule.m */,
-				BF510A26226172E100D28CBE /* ViewControllerManager.h */,
-				BF510A27226172E100D28CBE /* ViewControllerManager.m */,
 			);
 			name = firstRNapp;
 			sourceTree = "<group>";
@@ -631,6 +636,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				BFB46C492267038900822A0E /* AFNetworking */,
+				BF0003F122670304004C2D2A /* NetworkNativeModule.h */,
+				BF0003F222670304004C2D2A /* NetworkNativeModule.m */,
+				BF0003EF22670259004C2D2A /* SettingNativeModule.m */,
+				BF0003EB2267019D004C2D2A /* SettingsViewController.m */,
+				BF0003E922670186004C2D2A /* ViewControllerManager.m */,
 				13B07FAE1A68108700A75B9A /* firstRNapp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* firstRNappTests */,
@@ -1162,9 +1173,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0003E62267006D004C2D2A /* ui in Resources */,
+				BF0003E52267006D004C2D2A /* module in Resources */,
+				BFB46C722267038900822A0E /* AFNetworking in Resources */,
+				BF0003E72267006D004C2D2A /* bean in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				BFB33EBB223BD5200050E259 /* bundle in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				BF0003D82266F558004C2D2A /* bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1229,11 +1244,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFCE875E223DD00A007AC399 /* SettingsViewController.m in Sources */,
+				BF0003F022670259004C2D2A /* SettingNativeModule.m in Sources */,
+				BF0003F322670304004C2D2A /* NetworkNativeModule.m in Sources */,
+				BF0003EC2267019D004C2D2A /* SettingsViewController.m in Sources */,
+				BF0003EA22670186004C2D2A /* ViewControllerManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				BF510A28226172E100D28CBE /* ViewControllerManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				BFCE878B223DDBCB007AC399 /* OpenSettingNativeModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1348,9 +1364,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/bean,
+					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/ui,
+					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/module,
+					/Users/jun/mydemo/firstRNapp/ios/AFNetworking,
 				);
 				INFOPLIST_FILE = firstRNapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1358,6 +1379,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = firstRNapp;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1370,9 +1392,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/bean,
+					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/ui,
+					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/module,
+					/Users/jun/mydemo/firstRNapp/ios/AFNetworking,
 				);
 				INFOPLIST_FILE = firstRNapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1380,6 +1407,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = firstRNapp;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

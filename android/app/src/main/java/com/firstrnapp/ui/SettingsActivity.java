@@ -1,4 +1,4 @@
-package com.firstrnapp;
+package com.firstrnapp.ui;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.facebook.react.ReactActivity;
+import com.firstrnapp.MainApplication;
+import com.firstrnapp.R;
+import com.firstrnapp.module.SettingNativeModule;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -22,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class SettingsActivity extends ReactActivity {
     Button button;
-    OpenSettingNativeModule openSettingNativeModule;
+    SettingNativeModule openSettingNativeModule;
 
     private ExecutorService executor ;
     private class ThreadFactoryBuild implements ThreadFactory {

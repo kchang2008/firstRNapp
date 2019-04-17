@@ -1,4 +1,4 @@
-package com.firstrnapp;
+package com.firstrnapp.module;
 
 import android.content.Intent;
 import android.widget.Toast;
@@ -14,25 +14,26 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.firstrnapp.ui.SettingsActivity;
 
 /**
  * com.firstrnapp
- *
+ * 打开设置界面并执行交互
  * @author jun
  * @date 2019/3/17
  * Copyright (c) 2019 ${ORGANIZATION_NAME}. All rights reserved.
  */
-public class OpenSettingNativeModule extends ReactContextBaseJavaModule {
+public class SettingNativeModule extends ReactContextBaseJavaModule {
     private ReactContext mReactContext;
 
-    public OpenSettingNativeModule(ReactApplicationContext context) {
+    public SettingNativeModule(ReactApplicationContext context) {
         super(context);
         this.mReactContext = context;
     }
 
     @Override
     public String getName() {
-        return "OpenSettingNativeModule";
+        return "SettingNativeModule";
     }
 
     @ReactMethod

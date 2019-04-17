@@ -19,7 +19,7 @@ import CustomButton from './ButtonComponent';
 type props = {}
 
 
-var nativeModule = NativeModules.OpenSettingNativeModule;
+var nativeModule = NativeModules.SettingNativeModule;
 
 export default class Home extends Component<props>{
   //设置标题
@@ -49,42 +49,43 @@ export default class Home extends Component<props>{
       this.listener && this.listener.remove();
   }
 
+  success = () => {
+                nativeModule.getStringFromReactNative("检查权限成功")
+  }
+
+  fail = () => {
+        nativeModule.getStringFromReactNative("检查权限失败")
+  }
+
+  //跳转到原生设置界面，必须用this调用，否则就会报函数找不到
+  jumpToSettingsInterface = () => {
+       nativeModule.openNativeSettingsVC();
+  }
+
+  //如果客户端走的是reject，则会进入到catch捕捉
+  passPromiseResolveBackToRN = () => {
+       nativeModule.passPromiseBackToRN("promise").then(result=> {
+                          console.warn('data', result);
+                      }).catch((err)=> {
+                          console.warn('err', err);
+                      });
+
+  }
+
+  //使用try catch捕捉异常,测试下来没有第一种显示的异常信息多
+   passPromiseRejectBackToRN = async () =>  {
+        try {
+          var result = nativeModule.passPromiseBackToRN("");
+          if (result) {
+             console.log("respond this method",result);
+          }
+        } catch (e) {
+            console.warn('err', e);
+        }
+  }
+
   render(){
-        success = () => {
-              nativeModule.getStringFromReactNative("检查权限成功")
-        }
-
-        fail = () => {
-              nativeModule.getStringFromReactNative("检查权限失败")
-        }
-
-        //跳转到原生设置界面
-        jumpToSettingsInterface = () => {
-             nativeModule.openNativeSettingsVC();
-        }
-
-        //如果客户端走的是reject，则会进入到catch捕捉
-        passPromiseResolveBackToRN = () => {
-             nativeModule.passPromiseBackToRN("promise").then(result=> {
-                                console.warn('data', result);
-                            }).catch((err)=> {
-                                console.warn('err', err);
-                            });
-
-        }
-
-        //使用try catch捕捉异常,测试下来没有第一种显示的异常信息多
-         passPromiseRejectBackToRN = async () =>  {
-              try {
-                var result = nativeModule.passPromiseBackToRN("");
-                if (result) {
-                   console.log("respond this method",result);
-                }
-              } catch (e) {
-                console.warn('err', e);
-              }
-        }
-
+        //只在当前代码块中有效
         let delay_time = 300;
 
         return (
@@ -115,7 +116,7 @@ export default class Home extends Component<props>{
                     onPress={(callback)=> {
                         setTimeout(()=> {
                             callback();
-                            jumpToSettingsInterface();
+                            this.jumpToSettingsInterface();
 
                         }, delay_time);
                     }}
@@ -130,7 +131,7 @@ export default class Home extends Component<props>{
                     onPress={(callback)=> {
                         setTimeout(()=> {
                             callback();
-                            passPromiseResolveBackToRN();
+                            this.passPromiseResolveBackToRN();
 
                         }, delay_time);
                     }}
@@ -145,7 +146,7 @@ export default class Home extends Component<props>{
                     onPress={(callback)=> {
                         setTimeout(()=> {
                             callback();
-                            passPromiseRejectBackToRN();
+                            this.passPromiseRejectBackToRN();
 
                         }, delay_time);
                     }}
@@ -160,7 +161,7 @@ export default class Home extends Component<props>{
                     onPress={(callback)=> {
                         setTimeout(()=> {
                             callback();
-                            PermissionUtil.checkPermission(success,fail,["location"]);//成功调用 失败调用 权限
+                            PermissionUtil.checkPermission(this.success,this.fail,["location"]);//成功调用 失败调用 权限
 
                         }, delay_time);
                     }}
