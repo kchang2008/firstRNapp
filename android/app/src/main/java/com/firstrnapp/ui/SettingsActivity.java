@@ -48,7 +48,7 @@ public class SettingsActivity extends ReactActivity {
 
         setContentView(R.layout.settings_layout);
 
-        openSettingNativeModule =  MainApplication.getSettingReactPackage().getOpenSettingNativeModule();
+        openSettingNativeModule =  MainApplication.getSettingReactPackage().getSettingNativeModule();
         button = findViewById(R.id.send_event_bt);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

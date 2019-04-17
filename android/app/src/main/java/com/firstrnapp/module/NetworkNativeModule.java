@@ -8,6 +8,7 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableArray;
+import com.firstrnapp.net.NetInterceptor;
 import com.firstrnapp.net.RNNetConnectApi;
 
 import org.json.JSONArray;
@@ -53,6 +54,7 @@ public class NetworkNativeModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void doNetworkRequest(String longUrl, final com.facebook.react.bridge.Callback callback) {
+        Log.d(TAG,"doNetworkRequest");
         Call call = rnNetConnectApi.getShortLinkUrl(appKey,longUrl);
         call.enqueue(new Callback() {
             @Override
@@ -123,7 +125,10 @@ public class NetworkNativeModule extends ReactContextBaseJavaModule {
         builder.readTimeout((long)this.connectTime, TimeUnit.SECONDS);
         builder.writeTimeout((long)this.connectTime, TimeUnit.SECONDS);
         builder.retryOnConnectionFailure(false);
+        builder.addInterceptor(new NetInterceptor());
+
         OkHttpClient okHttpClient = builder.build();
+
         Retrofit retrofit = (new retrofit2.Retrofit.Builder()).baseUrl(urlHost).client(okHttpClient)
                 .addConverterFactory(ScalarsConverterFactory.create()).build();
         rnNetConnectApi = retrofit.create(RNNetConnectApi.class);
