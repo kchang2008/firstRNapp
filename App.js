@@ -18,6 +18,7 @@ import Article from './src/Component/Article';
 import Owner from './src/Component/Owner';
 import Order from './src/Component/Order';
 import Details from './src/Component/Details';
+import Scan from './src/Component/Scan';
 
 import {createStackNavigator} from 'react-navigation-stack'
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
@@ -63,7 +64,11 @@ export default class App extends Component<Props> {
                            />
                          )
                     } }),
-                OwnerVC:createStackNavigator({screen:Owner},{
+                OwnerVC:createStackNavigator(
+                    {
+                      Owner:{screen:Owner},
+                      ScanVC:{screen:Scan},
+                    },{
                     navigationOptions:{
                       headerTitle:'我的',
                       tabBarLabel: '我的',
@@ -115,9 +120,10 @@ export default class App extends Component<Props> {
            }
         )
         //引入要用到的跳转页面
-        const  mynavigatior = createStackNavigator({
+        createStackNavigator({
             MainVC:{screen:topTabs},
             DetailVC:{screen:Details},
+            ScanVC:{screen:Scan},
         });
         return createAppContainer(topTabs)
     }

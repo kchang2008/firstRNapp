@@ -1,12 +1,15 @@
 import React,{ Component } from 'react';
 import {
-  StyleSheet,
-  Text,TouchableOpacity,
-  View, Image
+  StyleSheet,Platform,Dimensions,
+  Text,TouchableOpacity,InteractionManager,
+  View, Image,
 } from 'react-native';
 
 import PropTypes from 'prop-types';
 import { platform } from "os";
+
+import CustomButton from './ButtonComponent';
+import { scaleSize } from "./ScreenUtils";
 
 type props = {}
 
@@ -17,24 +20,33 @@ export default class Owner extends Component<props>{
   };
 
   constructor(props){
-    super(props);
+        super(props);
   }
 
   render(){
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <TouchableOpacity
-            onPress={() => {
-                    this.props.navigation.setParams({title: '我的'})}
-                }
-            >
-            <Text style={styles.text}>我的</Text>
-        </TouchableOpacity>
+        <CustomButton
+            text="去扫码"
+            buttonColor="red"
+            buttonType="normal"
+            textStyle={styles.textStyle}
+            style={styles.customButton}
+            disableColor="grey"
+            onPress={(callback)=> {
+                setTimeout(()=> {
+                    callback();
+                    this.props.navigation.navigate('ScanVC');
+
+                }, 300);
+            }}
+        />
       </View>
     );
   }
 }
+
 const styles = StyleSheet.create({
     container:{
       flex:1,
@@ -42,8 +54,14 @@ const styles = StyleSheet.create({
       alignItems:'center',
       backgroundColor:'grey'
     },
-    text:{
-      fontSize:30,
-      color:'black'
-    }
+    customButton: {
+          width: 150,
+          height: 40,
+          marginTop:40
+    },
+    textStyle: {
+          color: 'blue',
+          fontSize:scaleSize(40)
+    },
+
 });

@@ -51,31 +51,33 @@ RCT_EXPORT_METHOD(doNetworkRequest:(NSString *)longUrl success:(RCTResponseSende
             }
         }
         
-        //8.解析数据:根据需要处理
-        //NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
-        NSLog(@"response result = %@",result);
-        
-        if ([result isKindOfClass:[NSArray class]]) {
-            NSDictionary *item = (NSDictionary*)[(NSArray*)result objectAtIndex:0];
-            for (NSString *key in item) {
-                //存入数组并同步
-                
-                [[NSUserDefaults standardUserDefaults] setObject:item[key] forKey:key];
-                
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                
-                NSLog(@"key: %@ value: %@", key, item[key]);
-            }
-        } else {
-            for (NSString *key in result) {
-                //存入数组并同步
-                
-                [[NSUserDefaults standardUserDefaults] setObject:result[key] forKey:key];
-                
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                
-                NSLog(@"key: %@ value: %@", key, result[key]);
+        if ( nil != httpResponse && httpResponse.statusCode == 200) {
+            //解析数据:根据需要处理
+            //NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+            NSDictionary *result = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
+            NSLog(@"response result = %@",result);
+            
+            if ([result isKindOfClass:[NSArray class]]) {
+                NSDictionary *item = (NSDictionary*)[(NSArray*)result objectAtIndex:0];
+                for (NSString *key in item) {
+                    //存入数组并同步
+                    
+                    [[NSUserDefaults standardUserDefaults] setObject:item[key] forKey:key];
+                    
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    
+                    NSLog(@"key: %@ value: %@", key, item[key]);
+                }
+            } else {
+                for (NSString *key in result) {
+                    //存入数组并同步
+                    
+                    [[NSUserDefaults standardUserDefaults] setObject:result[key] forKey:key];
+                    
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    
+                    NSLog(@"key: %@ value: %@", key, result[key]);
+                }
             }
         }
     }];

@@ -50,7 +50,7 @@ export default class Home extends Component<props>{
   }
 
   success = () => {
-                nativeModule.getStringFromReactNative("检查权限成功")
+        nativeModule.getStringFromReactNative("检查权限成功")
   }
 
   fail = () => {

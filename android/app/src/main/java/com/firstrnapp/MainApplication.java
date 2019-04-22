@@ -11,6 +11,8 @@ import com.firstrnapp.module.NetworkReactPackage;
 import com.firstrnapp.module.SettingReactPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 
+import org.reactnative.camera.RNCameraPackage;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -34,6 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
       settingReactPackage = new SettingReactPackage();
       return Arrays.<ReactPackage>asList(
               new MainReactPackage(),
+              new RNCameraPackage(),
               new RNGestureHandlerPackage(),
               new NetworkReactPackage(),
               settingReactPackage
