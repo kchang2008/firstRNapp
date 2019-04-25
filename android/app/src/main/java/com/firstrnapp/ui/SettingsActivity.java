@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.facebook.react.ReactActivity;
 import com.firstrnapp.MainApplication;
 import com.firstrnapp.R;
 import com.firstrnapp.module.SettingNativeModule;
@@ -23,7 +22,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2019/3/17
  * Copyright (c) 2019 ${ORGANIZATION_NAME}. All rights reserved.
  */
-public class SettingsActivity extends ReactActivity {
+public class SettingsActivity extends BaseActivity {
     Button button;
     SettingNativeModule openSettingNativeModule;
 
