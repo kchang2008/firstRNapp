@@ -7,7 +7,6 @@ import android.os.Handler
 import android.os.Message
 import com.facebook.react.ReactActivity
 import com.firstrnapp.R
-import com.firstrnapp.ui.MainActivity
 
 /**
  * 欢迎界面
@@ -36,6 +35,4 @@ class Welcome : ReactActivity() {
         //2秒钟后跳转到主界面
         handler.sendEmptyMessageDelayed(0x0001,2000);
     }
-
-
 }

@@ -1,8 +1,6 @@
 package com.firstrnapp.ui;
 
-import com.facebook.react.ReactActivity;
-
-public class MainActivity extends ReactActivity {
+public class MainActivity extends BaseActivity{
 
     /**
      * Returns the name of the main component registered from JavaScript.

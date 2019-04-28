@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget
+    id="com.test.www"
+    version="0.0.1"
+    xmlns="http://www.w3.org/ns/widgets" >
+
+    <name>
+        Hello
+    </name>
+
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+
+    <content src="qqcharge.html" />
+
+    <access origin="*" />
+
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+
+    <!--
+         <preference
+        name="SplashScreen"
+        value="welcome" /> 不带后缀png的文件名，默认是screen
+    <preference
+        name="SplashScreenDelay"
+        value="100" /> Splash显示时间，默认是3000ms
+
+    <feature name="SplashScreen" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    -->
+
+    <feature name="MyPlugin">
+        <param name="android-package" value="plugins.CDVMyPlugin" />
+    </feature>
+
+    <feature name="impKeyboard">
+        <param name="android-package" value="plugins.PluginKeyBoard" />
+    </feature>
+    <feature name="impLocationPlugin">
+        <param name="android-package" value="plugins.LocationPlugin" />
+    </feature>
+    <feature name="impAlertViewPlugin">
+        <param name="android-package" value="plugins.AlertViewPlugin" />
+    </feature>
+
+    <feature name="showRedPoint">
+        <param name="android-package" value="plugins.RedPointPlugin" />
+    </feature>
+    <!--     <feature name="Demo" > feature的name属性   非常重要
+            <param
+                name="android-package"
+                value="plugins.Plugin_intent" />
+            name必须是步骤< 4 >中   function中调用的类名
+            value属性指定插件在src目录下的java文件  (命名空间)
+        </feature> -->
+
+</widget>

@@ -13,6 +13,7 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 
 import org.reactnative.camera.RNCameraPackage;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
@@ -45,7 +46,13 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected String getJSMainModuleName() {
-      return "index";
+      String unZipFile = getApplicationContext().getFilesDir().getAbsolutePath() + "/WebPlugin/index.android.bundle";
+      File file = new File(unZipFile);
+      if (file.exists()) {
+        return unZipFile;
+      } else {
+        return "index";
+      }
     }
   };
 

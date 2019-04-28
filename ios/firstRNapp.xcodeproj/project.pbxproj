@@ -49,6 +49,17 @@
 		BF0003EC2267019D004C2D2A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0003EB2267019D004C2D2A /* SettingsViewController.m */; };
 		BF0003F022670259004C2D2A /* SettingNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0003EF22670259004C2D2A /* SettingNativeModule.m */; };
 		BF0003F322670304004C2D2A /* NetworkNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0003F222670304004C2D2A /* NetworkNativeModule.m */; };
+		BF8748982272F805000F6659 /* download in Resources */ = {isa = PBXBuildFile; fileRef = BF87486E2272F805000F6659 /* download */; };
+		BF87489B2272F86E000F6659 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF87489A2272F86E000F6659 /* DownloadManager.m */; };
+		BF8748A5227538C5000F6659 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8748A4227538C5000F6659 /* Toast.m */; };
+		BF8748A82275401A000F6659 /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8748A72275401A000F6659 /* ZipUtils.m */; };
+		BF8748AC22754A8C000F6659 /* ZipArchive in Resources */ = {isa = PBXBuildFile; fileRef = BF8748AB22754A8C000F6659 /* ZipArchive */; };
+		BF8748AF22754DE3000F6659 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF8748AE22754DE3000F6659 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF8748B422754DFE000F6659 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8748B022754DFD000F6659 /* ioapi.c */; };
+		BF8748B522754DFE000F6659 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8748B122754DFD000F6659 /* mztools.c */; };
+		BF8748B622754DFE000F6659 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8748B222754DFE000F6659 /* zip.c */; };
+		BF8748B722754DFE000F6659 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8748B322754DFE000F6659 /* unzip.c */; };
+		BF8748BD22755FE8000F6659 /* NSURLSession+CorrectResumeData.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8748BC22755FE8000F6659 /* NSURLSession+CorrectResumeData.m */; };
 		BFB46C722267038900822A0E /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = BFB46C492267038900822A0E /* AFNetworking */; };
 		BFE5C728224F3E640088E9D6 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5C725224F3DC50088E9D6 /* libReactNativePermissions.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
@@ -399,6 +410,21 @@
 		BF0003EF22670259004C2D2A /* SettingNativeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SettingNativeModule.m; path = firstRNapp/module/SettingNativeModule.m; sourceTree = "<group>"; };
 		BF0003F122670304004C2D2A /* NetworkNativeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkNativeModule.h; path = firstRNapp/module/NetworkNativeModule.h; sourceTree = "<group>"; };
 		BF0003F222670304004C2D2A /* NetworkNativeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NetworkNativeModule.m; path = firstRNapp/module/NetworkNativeModule.m; sourceTree = "<group>"; };
+		BF87486E2272F805000F6659 /* download */ = {isa = PBXFileReference; lastKnownFileType = folder; name = download; path = firstRNapp/download; sourceTree = "<group>"; };
+		BF8748992272F86E000F6659 /* DownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DownloadManager.h; path = firstRNapp/download/DownloadManager.h; sourceTree = "<group>"; };
+		BF87489A2272F86E000F6659 /* DownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DownloadManager.m; path = firstRNapp/download/DownloadManager.m; sourceTree = "<group>"; };
+		BF8748A3227538C5000F6659 /* Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Toast.h; path = firstRNapp/utils/Toast.h; sourceTree = "<group>"; };
+		BF8748A4227538C5000F6659 /* Toast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Toast.m; path = firstRNapp/utils/Toast.m; sourceTree = "<group>"; };
+		BF8748A62275401A000F6659 /* ZipUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZipUtils.h; path = firstRNapp/utils/ZipUtils.h; sourceTree = "<group>"; };
+		BF8748A72275401A000F6659 /* ZipUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZipUtils.m; path = firstRNapp/utils/ZipUtils.m; sourceTree = "<group>"; };
+		BF8748AB22754A8C000F6659 /* ZipArchive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZipArchive; sourceTree = "<group>"; };
+		BF8748AE22754DE3000F6659 /* ZipArchive.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ZipArchive.mm; path = ZipArchive/ZipArchive.mm; sourceTree = "<group>"; };
+		BF8748B022754DFD000F6659 /* ioapi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = ZipArchive/minizip/ioapi.c; sourceTree = "<group>"; };
+		BF8748B122754DFD000F6659 /* mztools.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = ZipArchive/minizip/mztools.c; sourceTree = "<group>"; };
+		BF8748B222754DFE000F6659 /* zip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = zip.c; path = ZipArchive/minizip/zip.c; sourceTree = "<group>"; };
+		BF8748B322754DFE000F6659 /* unzip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = ZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
+		BF8748BB22755FE8000F6659 /* NSURLSession+CorrectResumeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+CorrectResumeData.h"; path = "firstRNapp/download/NSURLSession+CorrectResumeData.h"; sourceTree = "<group>"; };
+		BF8748BC22755FE8000F6659 /* NSURLSession+CorrectResumeData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+CorrectResumeData.m"; path = "firstRNapp/download/NSURLSession+CorrectResumeData.m"; sourceTree = "<group>"; };
 		BFB46C492267038900822A0E /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		BFE5C6FB224F3DC50088E9D6 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		D394BB4018804BCD8568B747 /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
@@ -548,6 +574,7 @@
 		13B07FAE1A68108700A75B9A /* firstRNapp */ = {
 			isa = PBXGroup;
 			children = (
+				BF87486E2272F805000F6659 /* download */,
 				BF0003E42267006D004C2D2A /* bean */,
 				BF0003E22267006D004C2D2A /* module */,
 				BF0003E32267006D004C2D2A /* ui */,
@@ -648,6 +675,20 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				BF8748BB22755FE8000F6659 /* NSURLSession+CorrectResumeData.h */,
+				BF8748BC22755FE8000F6659 /* NSURLSession+CorrectResumeData.m */,
+				BF8748B022754DFD000F6659 /* ioapi.c */,
+				BF8748B122754DFD000F6659 /* mztools.c */,
+				BF8748B322754DFE000F6659 /* unzip.c */,
+				BF8748B222754DFE000F6659 /* zip.c */,
+				BF8748AE22754DE3000F6659 /* ZipArchive.mm */,
+				BF8748AB22754A8C000F6659 /* ZipArchive */,
+				BF8748A62275401A000F6659 /* ZipUtils.h */,
+				BF8748A72275401A000F6659 /* ZipUtils.m */,
+				BF8748A3227538C5000F6659 /* Toast.h */,
+				BF8748A4227538C5000F6659 /* Toast.m */,
+				BF8748992272F86E000F6659 /* DownloadManager.h */,
+				BF87489A2272F86E000F6659 /* DownloadManager.m */,
 				BFB46C492267038900822A0E /* AFNetworking */,
 				BF0003F122670304004C2D2A /* NetworkNativeModule.h */,
 				BF0003F222670304004C2D2A /* NetworkNativeModule.m */,
@@ -1210,6 +1251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8748982272F805000F6659 /* download in Resources */,
 				BF0003E62267006D004C2D2A /* ui in Resources */,
 				BF0003E52267006D004C2D2A /* module in Resources */,
 				BFB46C722267038900822A0E /* AFNetworking in Resources */,
@@ -1217,6 +1259,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				BF0003D82266F558004C2D2A /* bundle in Resources */,
+				BF8748AC22754A8C000F6659 /* ZipArchive in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1281,10 +1324,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8748B422754DFE000F6659 /* ioapi.c in Sources */,
+				BF8748B522754DFE000F6659 /* mztools.c in Sources */,
+				BF8748B622754DFE000F6659 /* zip.c in Sources */,
+				BF8748B722754DFE000F6659 /* unzip.c in Sources */,
+				BF8748AF22754DE3000F6659 /* ZipArchive.mm in Sources */,
+				BF8748BD22755FE8000F6659 /* NSURLSession+CorrectResumeData.m in Sources */,
+				BF87489B2272F86E000F6659 /* DownloadManager.m in Sources */,
 				BF0003F022670259004C2D2A /* SettingNativeModule.m in Sources */,
 				BF0003F322670304004C2D2A /* NetworkNativeModule.m in Sources */,
 				BF0003EC2267019D004C2D2A /* SettingsViewController.m in Sources */,
 				BF0003EA22670186004C2D2A /* ViewControllerManager.m in Sources */,
+				BF8748A82275401A000F6659 /* ZipUtils.m in Sources */,
+				BF8748A5227538C5000F6659 /* Toast.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -1349,6 +1401,13 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../AFNetworking/AFNetworking/**",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../AFNetworking/AFNetworking/**",
 				);
 				INFOPLIST_FILE = firstRNappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1380,6 +1439,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../ios/AFNetworking/AFNetworking/**",
 				);
 				INFOPLIST_FILE = firstRNappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1416,8 +1476,9 @@
 					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/bean,
 					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/ui,
 					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/module,
-					/Users/jun/mydemo/firstRNapp/ios/AFNetworking,
+					/Users/jun/mydemo/firstRNapp/ios/AFNetworking/AFNetworking,
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					/Users/jun/mydemo/firstRNapp/ios/ZipArchive,
 				);
 				INFOPLIST_FILE = firstRNapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1450,8 +1511,9 @@
 					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/bean,
 					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/ui,
 					/Users/jun/mydemo/firstRNapp/ios/firstRNapp/module,
-					/Users/jun/mydemo/firstRNapp/ios/AFNetworking,
+					/Users/jun/mydemo/firstRNapp/ios/AFNetworking/AFNetworking,
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					/Users/jun/mydemo/firstRNapp/ios/ZipArchive,
 				);
 				INFOPLIST_FILE = firstRNapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

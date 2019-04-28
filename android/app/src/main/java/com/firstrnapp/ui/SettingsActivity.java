@@ -8,6 +8,8 @@ import android.widget.Button;
 import com.firstrnapp.MainApplication;
 import com.firstrnapp.R;
 import com.firstrnapp.module.SettingNativeModule;
+import com.firstrnapp.task.ZipExtractorTask;
+import com.firstrnapp.tool.UploadApk;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -22,7 +24,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2019/3/17
  * Copyright (c) 2019 ${ORGANIZATION_NAME}. All rights reserved.
  */
-public class SettingsActivity extends BaseActivity {
+public class SettingsActivity extends BaseActivity implements ZipExtractorTask.Delegate{
     Button button;
     SettingNativeModule openSettingNativeModule;
 
@@ -57,6 +59,20 @@ public class SettingsActivity extends BaseActivity {
             }
         });
 
+        Button update_bt = findViewById(R.id.update_bt);
+        update_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateBundleFile();
+            }
+        });
+
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        UploadApk.getInstance().releaseDownloadResource();
     }
 
     /**
@@ -78,4 +94,32 @@ public class SettingsActivity extends BaseActivity {
             }
         });
     }
+
+    /**
+     * 更新bundle文件
+     */
+    private void updateBundleFile(){
+        UploadApk.getInstance().init(this);
+        UploadApk.getInstance().download("http://www.imobpay.com/test/download/index.android.bundle.zip");
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see
+     * plugins.util.ZipExtractorTask.Delegate#unzipComplete_callback(java.lang
+     * .String, java.lang.String, boolean)
+     */
+    @Override
+    public void unzipComplete_callback(String sourcePath, String destPath, boolean silence) {
+        Log.i("unzipComplete_callback","unzip succeed");
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see plugins.util.ZipExtractorTask.Delegate#unzipCancel_callback()
+     */
+    @Override
+    public void unzipCancel_callback() { }
 }

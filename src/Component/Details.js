@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
 import {
   StyleSheet,
-  Text,
+  Text,Alert,
   View, Image,TouchableOpacity,
 } from 'react-native';
 
@@ -22,8 +22,15 @@ export default class Details extends Component<props>{
     super(props);
   }
 
+
+
   render(){
     const { navigate } = this.props.navigation;
+    Alert.alert(
+              '提示',
+              '详情界面',
+                  [{text: '确定'}]
+           )
     return (
       <View style={styles.container}>
             <Text style={styles.text}>详情展示页</Text>

@@ -18,4 +18,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/send_event_bt"
         android:text="发送消息到RN"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/update_bt"
+        android:text="更新下载包"/>
 </LinearLayout>

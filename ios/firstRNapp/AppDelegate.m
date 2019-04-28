@@ -9,7 +9,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-
+#import "DownloadManager.h"
 
 @implementation AppDelegate
 
@@ -19,7 +19,20 @@
 
 //  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 
-  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index.ios" withExtension:@"jsbundle"];
+  NSArray *documentsPathArr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  NSString *documentsPath = [documentsPathArr lastObject];
+  // 拼接要写入文件的路径
+  NSString *path = [documentsPath stringByAppendingPathComponent:@"bundle/index.ios"];
+  NSString *fileName = [documentsPath stringByAppendingPathComponent:@"bundle/index.ios.jsbundle"];
+  NSLog(@"didFinishLaunchingWithOptions path=%@,filename=%@",path,fileName);
+  
+  if ([[NSFileManager defaultManager] fileExistsAtPath:fileName]) {
+     jsCodeLocation = [NSURL URLWithString:fileName];//[[NSBundle mainBundle] URLForResource:path withExtension:@"jsbundle"];
+     NSLog(@"didFinishLaunchingWithOptions jsCodeLocation=%@",jsCodeLocation.absoluteURL.absoluteString);
+  } else {
+     jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index.ios" withExtension:@"jsbundle"];
+     NSLog(@"didFinishLaunchingWithOptions default bundle file");
+  }
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"firstRNapp"
@@ -38,4 +51,8 @@
   return YES;
 }
 
+
+-(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler {
+  [DownloadManager sharedInstance].downloadSessionCompletionHandler = completionHandler;
+}
 @end

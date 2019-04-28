@@ -14,6 +14,7 @@ import java.util.List;
  * Copyright (c) 2019 ${ORGANIZATION_NAME}. All rights reserved.
  */
 public class ActivityInfos implements Serializable{
+    private  Activity currActivity;
     private ActivityInfos(){}
 
     public static ActivityInfos getInstance(){
@@ -77,5 +78,9 @@ public class ActivityInfos implements Serializable{
             }
         }
         return ret;
+    }
+
+    public Activity getCurrActivity() {
+        return currActivity;
     }
 }

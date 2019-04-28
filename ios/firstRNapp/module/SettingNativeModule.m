@@ -10,6 +10,8 @@
 
 @implementation SettingNativeModule
 
+UIAlertController* alert;
+
 //导入当前这个交互类
 RCT_EXPORT_MODULE();
 
@@ -89,29 +91,32 @@ RCT_EXPORT_METHOD(passPromiseBackToRN:(NSString *)msg resolve:(RCTPromiseResolve
 - (void)showAlertController: (NSString * )title setMessage:(NSString * )message
 {
   //弹框提示
-  UIAlertController* alert = [UIAlertController alertControllerWithTitle:title                                                                   message:message preferredStyle:UIAlertControllerStyleAlert];
-  
-  UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"jump" style:UIAlertActionStyleDefault                                                          handler:^(UIAlertAction * action) {
-      //响应事件
-      NSLog(@"action = %@", action);
-  }];
-  
-  UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault                                                          handler:^(UIAlertAction * action) {
-      //响应事件
-      NSLog(@"action = %@", action);
-      NSUInteger count = [[ViewControllerManager alloc] getViewControllerCount];
-      //为1说明是在主界面，不需要执行操作
-      if (count > 1) {
-        UIViewController* currVC = [[ViewControllerManager alloc] getCurrentViewController];
-        [[ViewControllerManager alloc] removeViewController:currVC];
-        [currVC dismissViewControllerAnimated:true completion:nil];
-      }
-  }];
-  
-  [alert addAction:defaultAction];
-  [alert addAction:cancelAction];
+  if ( alert == nil) {
+    alert = [UIAlertController alertControllerWithTitle:title                                                                   message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"jump" style:UIAlertActionStyleDefault                                                          handler:^(UIAlertAction * action) {
+        //响应事件
+        NSLog(@"action = %@", action);
+    }];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault                                                          handler:^(UIAlertAction * action) {
+        //响应事件
+        NSLog(@"action = %@", action);
+        NSUInteger count = [[ViewControllerManager alloc] getViewControllerCount];
+        //为1说明是在主界面，不需要执行操作
+        if (count > 1) {
+          UIViewController* currVC = [[ViewControllerManager alloc] getCurrentViewController];
+          [[ViewControllerManager alloc] removeViewController:currVC];
+          [currVC dismissViewControllerAnimated:true completion:nil];
+        }
+    }];
+    
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+  }
   
   UIViewController* currVC = [[ViewControllerManager alloc] getCurrentViewController];
+    
   [currVC presentViewController:alert animated:YES completion:nil];
   
 }

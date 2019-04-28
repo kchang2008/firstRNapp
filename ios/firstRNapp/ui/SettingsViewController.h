@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "ViewControllerManager.h"
+#import "Toast.h"
 
 //必须指定它的基类
 @interface SettingsViewController : UIViewController
