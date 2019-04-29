@@ -107,23 +107,32 @@
   NSLog(@"progress = %f",progress);
   if (progress < 0 ) { progress = 0; }
   if (progress > 1 ) { progress = 1; }
-  if (self.progressView  == nil) {
-    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(90, 340, 200, 2)];
-    [self.view addSubview:self.progressView];
-  }
-  self.progressView.hidden = NO;
-  self.progressView.progress = progress;
   
+  //通知主线程刷新
+  dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.progressView  == nil) {
+          self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(90, 340, 200, 2)];
+          [self.view addSubview:self.progressView];
+        }
+        self.progressView.hidden = NO;
+        self.progressView.progress = progress;
+    
+        if ( progress >= 1 ){
+            self.progressView.hidden = YES;
+        }
+  });
 }
 
 //下载完成回调
 -(void)DownloadManagerDownloadingFinish:(NSString *)path identifier:(NSString *)identifier {
   NSLog(@"path = %@ identifier=%@",path,identifier);
-  self.progressView.progress = 1;
-  [Toast addToastWithString:@"更新到最新数据啦~" inView:self.view];
-  if (self.progressView != nil) {
-    self.progressView.hidden = YES;
-  }
+  
+  //通知主线程刷新
+  dispatch_async(dispatch_get_main_queue(), ^{
+      self.progressView.progress = 1;
+      [Toast addToastWithString:@"更新到最新数据啦~" inView:self.view];
+      self.progressView.hidden = YES;
+  });
 }
 
 //配置下载

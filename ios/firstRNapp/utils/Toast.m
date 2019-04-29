@@ -20,7 +20,7 @@
 + (void) addToastWithString:(NSString *)string inView:(UIView *)view {
   
   CGRect initRect = CGRectMake(0, STATUS_BAR_HEIGHT + 44, aiScreenWidth, 0);
-  CGRect rect = CGRectMake(0, STATUS_BAR_HEIGHT + 44, aiScreenWidth, 22);
+  CGRect rect = CGRectMake(0, STATUS_BAR_HEIGHT + 44, aiScreenWidth, 40);
   UILabel* label = [[UILabel alloc] initWithFrame:initRect];
   label.text = string;
   label.textAlignment = NSTextAlignmentCenter;
