@@ -56,7 +56,8 @@ RCT_EXPORT_METHOD(doNetworkRequest:(NSString *)longUrl success:(RCTResponseSende
             //NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
             NSDictionary *result = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
             NSLog(@"response result = %@",result);
-            
+          
+            //判断过来的数据是json数组还是object
             if ([result isKindOfClass:[NSArray class]]) {
                 NSDictionary *item = (NSDictionary*)[(NSArray*)result objectAtIndex:0];
                 for (NSString *key in item) {
@@ -68,6 +69,7 @@ RCT_EXPORT_METHOD(doNetworkRequest:(NSString *)longUrl success:(RCTResponseSende
                     
                     NSLog(@"key: %@ value: %@", key, item[key]);
                 }
+                [self sendCallbackToH5:callback];
             } else {
                 for (NSString *key in result) {
                     //存入数组并同步
@@ -78,21 +80,24 @@ RCT_EXPORT_METHOD(doNetworkRequest:(NSString *)longUrl success:(RCTResponseSende
                     
                     NSLog(@"key: %@ value: %@", key, result[key]);
                 }
+                [self sendCallbackToH5:callback];
             }
         }
     }];
-    
-    //读取数据
-    NSString *shortUrl = [[NSUserDefaults standardUserDefaults] objectForKey:@"url_short"];
-  
-    if ( nil != shortUrl) {
-      NSLog(@"shortUrl = %@",shortUrl);
-      callback(@[shortUrl,]);
-      
-    } else {
-      callback(@[@"获取失败",]);
-    }
   
     [dataTask resume];
+}
+
+- (void) sendCallbackToH5:(RCTResponseSenderBlock)callback{
+  //读取数据
+  NSString *shortUrl = [[NSUserDefaults standardUserDefaults] objectForKey:@"url_short"];
+  
+  if ( nil != shortUrl) {
+    NSLog(@"shortUrl = %@",shortUrl);
+    callback(@[shortUrl,]);
+    
+  } else {
+    callback(@[@"获取失败",]);
+  }
 }
 @end

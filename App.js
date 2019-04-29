@@ -119,12 +119,6 @@ export default class App extends Component<Props> {
              backBehavior: 'none',
            }
         )
-        //引入要用到的跳转页面
-        createStackNavigator({
-            MainVC:{screen:topTabs},
-            DetailVC:{screen:Details},
-            ScanVC:{screen:Scan},
-        });
         return createAppContainer(topTabs)
     }
 
