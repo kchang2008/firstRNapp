@@ -49,6 +49,8 @@ public class SettingsActivity extends BaseActivity implements ZipExtractorTask.D
 
         setContentView(R.layout.settings_layout);
 
+        setTitleName("设置");
+
         openSettingNativeModule =  MainApplication.getSettingReactPackage().getSettingNativeModule();
         button = findViewById(R.id.send_event_bt);
         button.setOnClickListener(new View.OnClickListener() {

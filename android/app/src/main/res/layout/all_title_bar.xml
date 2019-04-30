@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titlebar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_public"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip" >
+
+        <TextView
+            android:id="@+id/all_title_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/title_color" />
+
+        <LinearLayout
+            android:id="@+id/all_backbutton_layout"
+            android:layout_width="@dimen/dimen_80"
+            android:layout_height="45dip"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/back_blue"
+                android:paddingBottom="10dip"
+                android:paddingTop="10dip" />
+
+            <TextView
+                android:id="@+id/all_back_text_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:gravity="center"
+                android:text="@string/back"
+                android:textColor="@color/info_color" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/all_tips_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dip"
+            android:background="@null"
+            android:textColor="@color/info_color"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/all_tips_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dip"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/all_spliteline_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1px"
+        android:background="@color/top_line"
+        android:orientation="horizontal" />
+
+</LinearLayout>

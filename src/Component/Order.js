@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import {
-  StyleSheet,
+  StyleSheet,Alert,
   Text,TouchableOpacity,
   View, Image,NativeModules,
 } from 'react-native';
@@ -48,27 +48,45 @@ export default class Order extends Component<props>{
                    jsUrl: "页面获取数据中。。。",  //这里放你自己定义的state变量及初始值
                 };
         this.getDataFromNet();
-        this.fetchData();
+        //this.fetchData();
+        this.fetchData()
+            .then(data => {
+                   console.log(data);
+                   var msg = JSON.stringify(data);
+                   Alert.alert(
+                       '提示',
+                       msg,
+                           [{text: '确定'}]
+                   )
+                   this.setState({
+                       jsUrl: msg,
+
+                   })
+            })
+            .catch(reason => console.log("reason.message="+reason.message))
+            .done();  //调用了done() —— 这样可以抛出异常而不是简单忽略
 
   }
 
   //由页面发起请求
-  fetchData() {
-        fetch(urlHost+longUrl)
-            .then((response) => response.json())
-            .then((responseData) => {
-                console.log("responseData[0]=",responseData[0]);
-                setTimeout(()=> {
-                    this.setState({
-                        jsUrl: responseData[0].url_short,
+  async fetchData() {
+          let urldata = 'https://xxxxx.xxx.xxx/xxx.json';
 
-                    });
-                }, delay_time);
-            })
-            .done();
+          let param = {param1:""};
+          let bodyData = 'requestXml='+JSON.stringify(param);
+          console.log("fetch body=",bodyData);
+          let response = await fetch(urldata,{
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+              },
+              body: bodyData
+          });
+          let data = await response.json();
+          // only proceed once second promise is resolved
+          return data;
         //调用了done() —— 这样可以抛出异常而不是简单忽略
-    }
-
+  }
 
   render(){
     const { navigate } = this.props.navigation;
