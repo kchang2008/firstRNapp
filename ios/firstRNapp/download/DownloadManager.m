@@ -270,10 +270,11 @@
 解压到沙盒目录下
 **/
 - (void)unZipFileToPath{
-  NSArray *documentsPathArr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-  NSString *documentsPath = [documentsPathArr lastObject];
-  
-  [ZipUtils zipFile:self.DownloadPath destPath:self.Location];
-  
+  if ([self.manage fileExistsAtPath:self.DownloadPath] == YES) {
+    Boolean ret = [ZipUtils zipFile:self.DownloadPath destPath:self.Location];
+    if (ret == true) {
+        [self.manage removeItemAtPath:self.DownloadPath error:nil];
+    }
+  }
 }
 @end

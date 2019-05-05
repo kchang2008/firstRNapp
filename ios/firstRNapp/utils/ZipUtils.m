@@ -9,7 +9,8 @@
 #import "ZipUtils.h"
 
 @implementation ZipUtils
-+ (void)zipFile : (NSString*)fileName destPath:(NSString*)path{
++ (Boolean)zipFile : (NSString*)fileName destPath:(NSString*)path{
+  Boolean result = false;
   ZipArchive* zip = [[ZipArchive alloc] init];
   
   NSString* unzipfile = fileName;
@@ -17,17 +18,18 @@
   if( [zip UnzipOpenFile:unzipfile] )
   {
     BOOL ret = [zip UnzipFileTo:unzipto overWrite:YES];
-    if( NO==ret )
+    if( NO == ret )
     {
       NSLog(@"zipFile zip failed");
     } else {
       NSLog(@"zipFile zip to %@",path);
+      result = true;
     }
     [zip UnzipCloseFile];
   } else {
     NSLog(@"zipFile zip file can't be opened");
   }
-  
+  return result;
   
 }
 @end

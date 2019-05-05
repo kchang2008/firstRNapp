@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { platform } from "os";
 import TabNavigator from 'react-native-tab-navigator';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import Storage from './DeviceStorage'; //default方法不需要花括号，加上就会报错，方法找不到
 
 type props = {}
 
@@ -22,15 +23,25 @@ export default class Details extends Component<props>{
     super(props);
   }
 
-
-
   render(){
     const { navigate } = this.props.navigation;
-    Alert.alert(
-              '提示',
-              '详情界面',
-                  [{text: '确定'}]
-           )
+    Storage.get("isIn").then((isIn) => {
+       console.log("isIn = \n" + isIn);
+       if (isIn == 0 || isIn == null) {
+               Storage.save("isIn",1);
+               Alert.alert(
+                         '提示',
+                         '欢迎新用户',
+                             [{text: '确定'}]
+                      )
+           } else {
+               Alert.alert(
+                         '提示',
+                         '欢迎再回来',
+                             [{text: '确定'}])
+           }
+    });
+
     return (
       <View style={styles.container}>
             <Text style={styles.text}>详情展示页</Text>

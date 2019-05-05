@@ -10,5 +10,5 @@
 #import "ZipArchive.h"
 
 @interface ZipUtils : NSObject
-+ (void)zipFile : (NSString*)fileName destPath:(NSString*)path;
++ (Boolean)zipFile : (NSString*)fileName destPath:(NSString*)path;
 @end
