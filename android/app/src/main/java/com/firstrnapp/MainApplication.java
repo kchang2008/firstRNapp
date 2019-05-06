@@ -46,7 +46,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected String getJSMainModuleName() {
-      String unZipFile = getApplicationContext().getFilesDir().getAbsolutePath() + "/WebPlugin/index.android.bundle";
+      String unZipFile = getApplicationContext().getFilesDir().getAbsolutePath() + "/WebPlugin/index.android.jsbundle";
       File file = new File(unZipFile);
       if (file.exists()) {
         return unZipFile;

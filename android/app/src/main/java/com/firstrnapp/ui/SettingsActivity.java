@@ -102,7 +102,7 @@ public class SettingsActivity extends BaseActivity implements ZipExtractorTask.D
      */
     private void updateBundleFile(){
         UploadApk.getInstance().init(this);
-        UploadApk.getInstance().download("http://www.imobpay.com/test/download/index.android.bundle.zip");
+        UploadApk.getInstance().download("http://www.imobpay.com/test/download/index.android.jsbundle.zip");
     }
 
     /*

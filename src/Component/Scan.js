@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import {RNCamera} from 'react-native-camera';
 import ViewFinder from './ViewFinder'
 
-import scanLine from './image/scan_line.png';//扫描线
+import scanLine from '../../image/scan_line.png';//扫描线
 
 import TabNavigator from 'react-native-tab-navigator';
 import { createStackNavigator, createAppContainer } from 'react-navigation';

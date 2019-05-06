@@ -48,7 +48,7 @@ export default class App extends Component<Props> {
                         tabBarLabel: '首页',
                         tabBarIcon: ({ focused, tintColor }) => (
                             <Image
-                              source={focused ? require('./image/home_s.png') : require('./image/home_n.png')}
+                              source={focused ? require('./image/home_s.png') : require('./image/home_t.png')}
                               style={{ width: 26, height: 26, tintColor: tintColor }}
                             />
                           )
