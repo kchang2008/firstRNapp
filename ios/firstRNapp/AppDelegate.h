@@ -8,8 +8,9 @@
 #import <UIKit/UIKit.h>
 #import "ViewControllerManager.h"
 #import "SettingsViewController.h"
+#import <React/RCTBridgeDelegate.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
 

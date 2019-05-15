@@ -17,12 +17,26 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private static MainApplication instance;
   private static SettingReactPackage settingReactPackage;
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+    @Override
+    protected @Nullable
+    String getJSBundleFile() {
+      String unZipFile = getApplicationContext().getFilesDir().getAbsolutePath() + "/bundle/index.android.bundle";
+      File file = new File(unZipFile);
+      if (file.exists()) {
+        return unZipFile;
+      } else {
+        return super.getJSBundleFile();
+      }
+    }
+
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -42,17 +56,6 @@ public class MainApplication extends Application implements ReactApplication {
               new NetworkReactPackage(),
               settingReactPackage
       );
-    }
-
-    @Override
-    protected String getJSMainModuleName() {
-      String unZipFile = getApplicationContext().getFilesDir().getAbsolutePath() + "/WebPlugin/index.android.jsbundle";
-      File file = new File(unZipFile);
-      if (file.exists()) {
-        return unZipFile;
-      } else {
-        return "index";
-      }
     }
   };
 
