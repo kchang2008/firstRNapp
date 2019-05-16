@@ -28,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected @Nullable
     String getJSBundleFile() {
+      //如果有下载更新，则使用下载更新文件
       String unZipFile = getApplicationContext().getFilesDir().getAbsolutePath() + "/bundle/index.android.bundle";
       File file = new File(unZipFile);
       if (file.exists()) {

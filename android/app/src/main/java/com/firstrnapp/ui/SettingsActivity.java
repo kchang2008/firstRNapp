@@ -4,13 +4,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.firstrnapp.MainApplication;
 import com.firstrnapp.R;
 import com.firstrnapp.module.SettingNativeModule;
 import com.firstrnapp.task.ZipExtractorTask;
 import com.firstrnapp.tool.UploadApk;
+import com.firstrnapp.utils.FileUtils;
+import com.firstrnapp.utils.GoogleDiffMatchPatchUtils;
 
+import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
@@ -69,6 +73,13 @@ public class SettingsActivity extends BaseActivity implements ZipExtractorTask.D
             }
         });
 
+        Button patch_bt = findViewById(R.id.patch_bt);
+        patch_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mergeBundleFile();
+            }
+        });
     }
 
     @Override
@@ -102,9 +113,30 @@ public class SettingsActivity extends BaseActivity implements ZipExtractorTask.D
      */
     private void updateBundleFile(){
         UploadApk.getInstance().init(this);
-        UploadApk.getInstance().download("http://www.imobpay.com/test/download/index.android.jsbundle.zip");
+        UploadApk.getInstance().download("http://www.imobpay.com/test/download/patch.zip");
     }
 
+    private void mergeBundleFile(){
+        String patchBundlePath = this.getFilesDir().getAbsolutePath() + "/bundle/patch.bundle";
+        String patchesFile = FileUtils.readFileToString(patchBundlePath);
+
+        String unZipFilePath = this.getFilesDir().getAbsolutePath() + "/bundle/index.android.bundle";
+        String unZipFile = FileUtils.readFileToString(unZipFilePath);
+
+        if (new File(unZipFilePath).exists()) {
+            GoogleDiffMatchPatchUtils googleDiffMatchPatchUtils = GoogleDiffMatchPatchUtils.getInstance(this);
+            googleDiffMatchPatchUtils.mergePatSourceWithAsset(unZipFile,patchesFile,new File(unZipFilePath));
+            //删除patch包
+            new File(patchBundlePath).delete();
+            Toast.makeText(this,"更新成功",Toast.LENGTH_SHORT).show();
+        } else {
+            File patch = new File(patchesFile);
+            patch.renameTo(new File(unZipFile));
+            Log.i("mergeBundleFile","patch name="+patch.getName());
+        }
+
+
+    }
     /*
      * (non-Javadoc)
      *

@@ -30,5 +30,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/update_bt"
             android:text="更新下载包"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/patch_bt"
+            android:text="补丁包测试"/>
     </LinearLayout>
 </LinearLayout>

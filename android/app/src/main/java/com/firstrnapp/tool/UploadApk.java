@@ -229,7 +229,7 @@ public class UploadApk {
      */
     private void zipPackage(BaseActivity baseActivity,String packageFile){
         try {
-            String unZipPath = baseActivity.getFilesDir().getAbsolutePath() + "/WebPlugin";
+            String unZipPath = baseActivity.getFilesDir().getAbsolutePath() + "/bundle";
             ZipExtractorTask task = new ZipExtractorTask(packageFile, unZipPath, baseActivity, true, true);
             task.execute();
         } catch (Exception ex){

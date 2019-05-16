@@ -60,6 +60,19 @@
 		BF8748B622754DFE000F6659 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8748B222754DFE000F6659 /* zip.c */; };
 		BF8748B722754DFE000F6659 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = BF8748B322754DFE000F6659 /* unzip.c */; };
 		BF8748BD22755FE8000F6659 /* NSURLSession+CorrectResumeData.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8748BC22755FE8000F6659 /* NSURLSession+CorrectResumeData.m */; };
+		BFA9E1C2228D679F009F9800 /* Version.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BFA9E19A228D679F009F9800 /* Version.xcconfig */; };
+		BFA9E1C3228D679F009F9800 /* Base+SnowLeopard.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BFA9E19B228D679F009F9800 /* Base+SnowLeopard.xcconfig */; };
+		BFA9E1C4228D679F009F9800 /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BFA9E19C228D679F009F9800 /* Base.xcconfig */; };
+		BFA9E1C5228D679F009F9800 /* DiffMatchPatchCFUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = BFA9E19F228D679F009F9800 /* DiffMatchPatchCFUtilities.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BFA9E1C6228D679F009F9800 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFA9E1A0228D679F009F9800 /* InfoPlist.strings */; };
+		BFA9E1CA228D679F009F9800 /* NSString+UnicharUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA9E1AB228D679F009F9800 /* NSString+UnicharUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BFA9E1CB228D679F009F9800 /* DiffMatchPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA9E1AD228D679F009F9800 /* DiffMatchPatch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BFA9E1CC228D679F009F9800 /* NSString+JavaSubstring.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA9E1AE228D679F009F9800 /* NSString+JavaSubstring.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BFA9E1CD228D679F009F9800 /* NSString+UriCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA9E1AF228D679F009F9800 /* NSString+UriCompatibility.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BFA9E1CE228D679F009F9800 /* Speedtest1.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFA9E1B3228D679F009F9800 /* Speedtest1.txt */; };
+		BFA9E1CF228D679F009F9800 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFA9E1B5228D679F009F9800 /* Info.plist */; };
+		BFA9E1D0228D679F009F9800 /* Speedtest2.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFA9E1B6228D679F009F9800 /* Speedtest2.txt */; };
+		BFA9E1D1228D679F009F9800 /* NSMutableDictionary+DMPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA9E1B8228D679F009F9800 /* NSMutableDictionary+DMPExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BFB46C722267038900822A0E /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = BFB46C492267038900822A0E /* AFNetworking */; };
 		BFE5C728224F3E640088E9D6 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5C725224F3DC50088E9D6 /* libReactNativePermissions.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
@@ -312,6 +325,27 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		BFA9E1BC228D679F009F9800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFA9E1B0228D679F009F9800 /* DiffMatchPatch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = DiffMatchPatch;
+		};
+		BFA9E1BE228D679F009F9800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFA9E1B0228D679F009F9800 /* DiffMatchPatch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D5BC0AF128CA8E200B8F5FF;
+			remoteInfo = DiffMatchPatchTest;
+		};
+		BFA9E1C0228D679F009F9800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFA9E1B0228D679F009F9800 /* DiffMatchPatch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D96F3A212AFC68900C3E5C0;
+			remoteInfo = speedtest;
+		};
 		BFB33EA8223BD3520050E259 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -425,6 +459,29 @@
 		BF8748B322754DFE000F6659 /* unzip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = ZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
 		BF8748BB22755FE8000F6659 /* NSURLSession+CorrectResumeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+CorrectResumeData.h"; path = "firstRNapp/download/NSURLSession+CorrectResumeData.h"; sourceTree = "<group>"; };
 		BF8748BC22755FE8000F6659 /* NSURLSession+CorrectResumeData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+CorrectResumeData.m"; path = "firstRNapp/download/NSURLSession+CorrectResumeData.m"; sourceTree = "<group>"; };
+		BFA9E19A228D679F009F9800 /* Version.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		BFA9E19B228D679F009F9800 /* Base+SnowLeopard.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base+SnowLeopard.xcconfig"; sourceTree = "<group>"; };
+		BFA9E19C228D679F009F9800 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		BFA9E19D228D679F009F9800 /* DiffMatchPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffMatchPatch.h; sourceTree = "<group>"; };
+		BFA9E19E228D679F009F9800 /* speedtest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speedtest_Prefix.pch; sourceTree = "<group>"; };
+		BFA9E19F228D679F009F9800 /* DiffMatchPatchCFUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DiffMatchPatchCFUtilities.c; sourceTree = "<group>"; };
+		BFA9E1A1228D679F009F9800 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BFA9E1A2228D679F009F9800 /* DiffMatchPatch_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffMatchPatch_Prefix.pch; sourceTree = "<group>"; };
+		BFA9E1A3228D679F009F9800 /* NSString+UriCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UriCompatibility.h"; sourceTree = "<group>"; };
+		BFA9E1A4228D679F009F9800 /* NSString+JavaSubstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaSubstring.h"; sourceTree = "<group>"; };
+		BFA9E1AA228D679F009F9800 /* NSMutableDictionary+DMPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+DMPExtensions.h"; sourceTree = "<group>"; };
+		BFA9E1AB228D679F009F9800 /* NSString+UnicharUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UnicharUtilities.m"; sourceTree = "<group>"; };
+		BFA9E1AC228D679F009F9800 /* DiffMatchPatchCFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffMatchPatchCFUtilities.h; sourceTree = "<group>"; };
+		BFA9E1AD228D679F009F9800 /* DiffMatchPatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiffMatchPatch.m; sourceTree = "<group>"; };
+		BFA9E1AE228D679F009F9800 /* NSString+JavaSubstring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JavaSubstring.m"; sourceTree = "<group>"; };
+		BFA9E1AF228D679F009F9800 /* NSString+UriCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UriCompatibility.m"; sourceTree = "<group>"; };
+		BFA9E1B0228D679F009F9800 /* DiffMatchPatch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DiffMatchPatch.xcodeproj; sourceTree = "<group>"; };
+		BFA9E1B3228D679F009F9800 /* Speedtest1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Speedtest1.txt; sourceTree = "<group>"; };
+		BFA9E1B4228D679F009F9800 /* NSString+UnicharUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UnicharUtilities.h"; sourceTree = "<group>"; };
+		BFA9E1B5228D679F009F9800 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFA9E1B6228D679F009F9800 /* Speedtest2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Speedtest2.txt; sourceTree = "<group>"; };
+		BFA9E1B7228D679F009F9800 /* MinMaxMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinMaxMacros.h; sourceTree = "<group>"; };
+		BFA9E1B8228D679F009F9800 /* NSMutableDictionary+DMPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+DMPExtensions.m"; sourceTree = "<group>"; };
 		BFB46C492267038900822A0E /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		BFE5C6FB224F3DC50088E9D6 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		D394BB4018804BCD8568B747 /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
@@ -675,6 +732,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				BFA9E198228D679F009F9800 /* DiffMatchPatch */,
 				BF8748BB22755FE8000F6659 /* NSURLSession+CorrectResumeData.h */,
 				BF8748BC22755FE8000F6659 /* NSURLSession+CorrectResumeData.m */,
 				BF8748B022754DFD000F6659 /* ioapi.c */,
@@ -723,6 +781,54 @@
 			children = (
 				ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */,
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFA9E198228D679F009F9800 /* DiffMatchPatch */ = {
+			isa = PBXGroup;
+			children = (
+				BFA9E199228D679F009F9800 /* Configurations */,
+				BFA9E19D228D679F009F9800 /* DiffMatchPatch.h */,
+				BFA9E19E228D679F009F9800 /* speedtest_Prefix.pch */,
+				BFA9E19F228D679F009F9800 /* DiffMatchPatchCFUtilities.c */,
+				BFA9E1A0228D679F009F9800 /* InfoPlist.strings */,
+				BFA9E1A2228D679F009F9800 /* DiffMatchPatch_Prefix.pch */,
+				BFA9E1A3228D679F009F9800 /* NSString+UriCompatibility.h */,
+				BFA9E1A4228D679F009F9800 /* NSString+JavaSubstring.h */,
+				BFA9E1AA228D679F009F9800 /* NSMutableDictionary+DMPExtensions.h */,
+				BFA9E1AB228D679F009F9800 /* NSString+UnicharUtilities.m */,
+				BFA9E1AC228D679F009F9800 /* DiffMatchPatchCFUtilities.h */,
+				BFA9E1AD228D679F009F9800 /* DiffMatchPatch.m */,
+				BFA9E1AE228D679F009F9800 /* NSString+JavaSubstring.m */,
+				BFA9E1AF228D679F009F9800 /* NSString+UriCompatibility.m */,
+				BFA9E1B0228D679F009F9800 /* DiffMatchPatch.xcodeproj */,
+				BFA9E1B3228D679F009F9800 /* Speedtest1.txt */,
+				BFA9E1B4228D679F009F9800 /* NSString+UnicharUtilities.h */,
+				BFA9E1B5228D679F009F9800 /* Info.plist */,
+				BFA9E1B6228D679F009F9800 /* Speedtest2.txt */,
+				BFA9E1B7228D679F009F9800 /* MinMaxMacros.h */,
+				BFA9E1B8228D679F009F9800 /* NSMutableDictionary+DMPExtensions.m */,
+			);
+			path = DiffMatchPatch;
+			sourceTree = "<group>";
+		};
+		BFA9E199228D679F009F9800 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				BFA9E19A228D679F009F9800 /* Version.xcconfig */,
+				BFA9E19B228D679F009F9800 /* Base+SnowLeopard.xcconfig */,
+				BFA9E19C228D679F009F9800 /* Base.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		BFA9E1B1228D679F009F9800 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFA9E1BD228D679F009F9800 /* DiffMatchPatch.framework */,
+				BFA9E1BF228D679F009F9800 /* DiffMatchPatchTest.octest */,
+				BFA9E1C1228D679F009F9800 /* speedtest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -873,11 +979,16 @@
 			knownRegions = (
 				en,
 				Base,
+				English,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = BFA9E1B1228D679F009F9800 /* Products */;
+					ProjectRef = BFA9E1B0228D679F009F9800 /* DiffMatchPatch.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -1181,6 +1292,27 @@
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		BFA9E1BD228D679F009F9800 /* DiffMatchPatch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DiffMatchPatch.framework;
+			remoteRef = BFA9E1BC228D679F009F9800 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BFA9E1BF228D679F009F9800 /* DiffMatchPatchTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DiffMatchPatchTest.octest;
+			remoteRef = BFA9E1BE228D679F009F9800 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BFA9E1C1228D679F009F9800 /* speedtest */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = speedtest;
+			remoteRef = BFA9E1C0228D679F009F9800 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		BFB33EA9223BD3520050E259 /* libjsi.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1251,15 +1383,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFA9E1CF228D679F009F9800 /* Info.plist in Resources */,
 				BF8748982272F805000F6659 /* download in Resources */,
 				BF0003E62267006D004C2D2A /* ui in Resources */,
 				BF0003E52267006D004C2D2A /* module in Resources */,
+				BFA9E1D0228D679F009F9800 /* Speedtest2.txt in Resources */,
+				BFA9E1C6228D679F009F9800 /* InfoPlist.strings in Resources */,
+				BFA9E1CE228D679F009F9800 /* Speedtest1.txt in Resources */,
 				BFB46C722267038900822A0E /* AFNetworking in Resources */,
 				BF0003E72267006D004C2D2A /* bean in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				BFA9E1C2228D679F009F9800 /* Version.xcconfig in Resources */,
 				BF0003D82266F558004C2D2A /* bundle in Resources */,
 				BF8748AC22754A8C000F6659 /* ZipArchive in Resources */,
+				BFA9E1C3228D679F009F9800 /* Base+SnowLeopard.xcconfig in Resources */,
+				BFA9E1C4228D679F009F9800 /* Base.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1325,14 +1464,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8748B422754DFE000F6659 /* ioapi.c in Sources */,
+				BFA9E1CC228D679F009F9800 /* NSString+JavaSubstring.m in Sources */,
 				BF8748B522754DFE000F6659 /* mztools.c in Sources */,
 				BF8748B622754DFE000F6659 /* zip.c in Sources */,
 				BF8748B722754DFE000F6659 /* unzip.c in Sources */,
+				BFA9E1CD228D679F009F9800 /* NSString+UriCompatibility.m in Sources */,
 				BF8748AF22754DE3000F6659 /* ZipArchive.mm in Sources */,
 				BF8748BD22755FE8000F6659 /* NSURLSession+CorrectResumeData.m in Sources */,
 				BF87489B2272F86E000F6659 /* DownloadManager.m in Sources */,
+				BFA9E1C5228D679F009F9800 /* DiffMatchPatchCFUtilities.c in Sources */,
 				BF0003F022670259004C2D2A /* SettingNativeModule.m in Sources */,
 				BF0003F322670304004C2D2A /* NetworkNativeModule.m in Sources */,
+				BFA9E1CA228D679F009F9800 /* NSString+UnicharUtilities.m in Sources */,
+				BFA9E1CB228D679F009F9800 /* DiffMatchPatch.m in Sources */,
+				BFA9E1D1228D679F009F9800 /* NSMutableDictionary+DMPExtensions.m in Sources */,
 				BF0003EC2267019D004C2D2A /* SettingsViewController.m in Sources */,
 				BF0003EA22670186004C2D2A /* ViewControllerManager.m in Sources */,
 				BF8748A82275401A000F6659 /* ZipUtils.m in Sources */,
@@ -1382,6 +1527,14 @@
 			);
 			name = LaunchScreen.xib;
 			path = firstRNapp;
+			sourceTree = "<group>";
+		};
+		BFA9E1A0228D679F009F9800 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFA9E1A1228D679F009F9800 /* English */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1479,6 +1632,7 @@
 					/Users/jun/mydemo/firstRNapp/ios/AFNetworking/AFNetworking,
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 					/Users/jun/mydemo/firstRNapp/ios/ZipArchive,
+					/Users/jun/mydemo/firstRNapp/ios/DiffMatchPatch,
 				);
 				INFOPLIST_FILE = firstRNapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1514,6 +1668,7 @@
 					/Users/jun/mydemo/firstRNapp/ios/AFNetworking/AFNetworking,
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 					/Users/jun/mydemo/firstRNapp/ios/ZipArchive,
+					/Users/jun/mydemo/firstRNapp/ios/DiffMatchPatch,
 				);
 				INFOPLIST_FILE = firstRNapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

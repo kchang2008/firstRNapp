@@ -1,5 +1,6 @@
 package com.firstrnapp.ui;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -23,7 +24,6 @@ public class BaseActivity extends ReactActivity {
         super.onCreate(savedInstanceState);
         ActivityInfos.getInstance().addActivity(this);
     }
-
 
     @Override
     protected void onDestroy() {

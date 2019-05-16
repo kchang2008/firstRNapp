@@ -24,7 +24,7 @@ var nativeModule = NativeModules.SettingNativeModule;
 export default class Home extends Component<props>{
   //设置标题
   static navigationOptions = {
-      headerTitle: '首页'
+      headerTitle: '首页weqweqwe'
   };
 
   constructor(props){
@@ -90,7 +90,7 @@ export default class Home extends Component<props>{
 
         return (
              <View style={styles.container}>
-                <Text style={styles.text}>首页</Text>
+                <Text style={styles.text}>首页asdas</Text>
                 <CustomButton
                     text="去详情页"
                     buttonColor="red"
