@@ -73,6 +73,9 @@
       <activity
           android:name=".ui.SettingsActivity"
           android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.SceneWebviewRoot"
+            android:screenOrientation="portrait"/>
       <activity
           android:name=".ui.MainActivity"
           android:screenOrientation="portrait"/>

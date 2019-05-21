@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SettingsViewController.h"
 #import "DownloadManager.h"
+#import "SceneWebviewRoot.h"
 
 @interface SettingsViewController() <DownloadManagerDelegate>{
   DownloadManager* downloadManger;
@@ -87,6 +88,15 @@
   [update_button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
   update_button.tag = 1002;
   [self.view addSubview:update_button];
+    
+    
+   UIButton *jump_button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+   jump_button.frame = CGRectMake(10.0, 250.0, 160.0, 40.0);
+   jump_button.backgroundColor =[UIColor orangeColor];
+   [jump_button setTitle:@"跳转到自定义webview视图" forState:UIControlStateNormal];
+   [jump_button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+   jump_button.tag = 1003;
+   [self.view addSubview:jump_button];
 }
 
 - (void)buttonClicked:(id)sender {
@@ -96,6 +106,10 @@
      //执行更新操作
      [self initDownload];
      [ downloadManger startOrContinueDownload];
+  } else if ([sender tag] == 1003) {
+      SceneWebviewRoot* sceneWebviewRoot = [[SceneWebviewRoot alloc] init];
+      UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sceneWebviewRoot];
+      [self presentViewController:nav animated:YES completion:nil];
   } else {
      [[ViewControllerManager alloc] removeViewController:self];
      [self dismissViewControllerAnimated:true completion:nil];

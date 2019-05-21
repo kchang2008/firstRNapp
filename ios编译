@@ -1,0 +1,14 @@
+react-native bundle --entry-file index.js  --platform ios --dev false --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle
+
+jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"index.ios" withExtension:@"jsbundle"];
+
+npm install react-native run-ios
+
+react-native bundle --entry-file index.js --bundle-output ./android/bundle/index.android.bundle --platform android --assets-dest ./android/bundle --dev false
+
+图片资源和bundle文件合并在一个目录bundle下，然后我们加载这整个目录到指定地点就可以使用了
+
+
+react-native bundle --entry-file ./src/Component/payment/Payment.js --bundle-output ./android/bundle/payment.android.bundle --platform android --assets-dest ./android/bundle --dev false
+
+react-native bundle --entry-file ./src/Component/payment/Payment.js --bundle-output ./ios/bundle/payment.ios.bundle --platform ios --assets-dest ./ios/bundle --dev false

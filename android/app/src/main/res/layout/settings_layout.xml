@@ -36,5 +36,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/patch_bt"
             android:text="补丁包测试"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/jump_bt"
+            android:text="跳转到自定义h5界面"/>
     </LinearLayout>
 </LinearLayout>

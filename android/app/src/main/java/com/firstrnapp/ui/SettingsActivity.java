@@ -1,5 +1,6 @@
 package com.firstrnapp.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -80,6 +81,21 @@ public class SettingsActivity extends BaseActivity implements ZipExtractorTask.D
                 mergeBundleFile();
             }
         });
+
+        Button jump_bt = findViewById(R.id.jump_bt);
+        jump_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jumpToWebviewInterface();
+            }
+        });
+    }
+
+    private void jumpToWebviewInterface(){
+        Intent intent = new Intent();
+        intent.setClass(SettingsActivity.this, SceneWebviewRoot.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     @Override
